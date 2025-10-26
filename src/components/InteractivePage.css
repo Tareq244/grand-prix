@@ -1,0 +1,148 @@
+.interactive-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.clickable-area {
+    position: absolute;
+    cursor: pointer;
+    /* border: 2px dashed red;
+    background-color: rgba(255, 0, 0, 0.2); */
+    z-index: 10;
+}
+
+.feedback-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* علشان ما يمنع النقر */
+    z-index: 20;
+}
+
+.icon-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* أيقونات العناصر */
+.icon-0 {
+    top: 69%;
+    left: 41%;
+    width: clamp(30px, 4vw, 50px);
+    height: clamp(50px, 8vw, 80px);
+    background-image: url('/src/assets/page45/3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.icon-1 {
+    top: 33%;
+    left: 18%;
+    width: clamp(60px, 8vw, 100px);
+    height: clamp(60px, 8vw, 100px);
+    background-image: url('/src/assets/page45/4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.icon-2 {
+    top: 24%;
+    left: 34%;
+    width: clamp(70px, 10vw, 115px);
+    height: clamp(90px, 12vw, 150px);
+    background-image: url('/src/assets/page45/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.icon-3 {
+    top: 72%;
+    left: 78%;
+    width: clamp(60px, 8vw, 100px);
+    height: clamp(60px, 8vw, 100px);
+    background-image: url('/src/assets/page45/2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.check-icon {
+    font-size: clamp(18px, 2vw, 30px);
+    color: #00cc00;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.icon-0 .check-icon {
+    position: absolute;
+    top: clamp(70%, 5vw, 99%);
+    right: clamp(300%, 21vw, 450%);
+}
+
+.icon-1 .check-icon {
+    position: absolute;
+    top: clamp(170%, 18vw, 235%);
+    right: clamp(90%, 8vw, 90%);
+}
+
+.icon-2 .check-icon {
+    position: absolute;
+    top: clamp(130%, 18vw, 180%); 
+    right: clamp(90%, 8vw, 95%);
+}
+
+.icon-3 .check-icon {
+    position: absolute;
+    top: clamp(45%, 5vw, 70%);
+    right: clamp(320%, 28vw, 400%);
+}
+
+.check-icon.recent {
+    animation: popIn 0.5s ease-in-out forwards;
+}
+
+/* تأثيرات الحركة */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* مؤشرات إضافية */
+.icon-4 {
+    position: absolute;
+    top: 61%;
+    left: 58%;
+    width: clamp(30px, 4vw, 50px);
+    height: clamp(100px, 12vw, 160px);
+    background-color: #00cc00;
+}
+
+.icon-5 {
+    position: absolute;
+    top: 65%;
+    left: 78%;
+    width: clamp(30px, 4vw, 50px);
+    height: clamp(60px, 8vw, 100px);
+    background-color: #00cc00;
+}
+
+.icon-6 {
+    position: absolute;
+    top: 45%;
+    left: 64%;
+    width: clamp(30px, 4vw, 50px);
+    height: clamp(60px, 8vw, 100px);
+    background-color: #00cc00;
+}

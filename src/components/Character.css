@@ -1,0 +1,54 @@
+.characters-wrapper {
+    display: flex;
+    justify-content: center;  /* لجعله في الوسط */
+    gap: 30px;                /* المسافة بين الصور */
+    margin-top: 100px;
+    flex-wrap: wrap;          /* للسماح للعناصر بالانتقال لسطر جديد عند الحاجة */
+}
+
+.character-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  margin-top: -80px;
+}
+
+.character-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.character-image.animated {
+    opacity: 0;
+}
+
+.character-container:hover .character-image.animated {
+    opacity: 1;
+}
+
+.character-container:hover .character-image.static {
+    opacity: 0;
+}
+
+/* ---- بداية التعديلات لجعل الكود متجاوبًا ---- */
+
+/* للشاشات الصغيرة (مثل الهواتف) بعرض 600px أو أقل */
+@media (max-width: 600px) {
+    .characters-wrapper {
+        flex-direction: column; /* تغيير اتجاه العناصر إلى عمودي */
+        align-items: center;    /* توسيط العناصر في المحور العمودي */
+        gap: 20px;              /* تقليل المسافة بين العناصر */
+        margin-top: 50px;       /* تقليل الهامش العلوي */
+    }
+
+    .character-container {
+        margin-top: 0;          /* إزالة الهامش العلوي السالب لأنه لم يعد ضروريًا */
+        width: 80px;            /* تصغير حجم الحاوية قليلًا */
+        height: 80px;
+    }
+}

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import sound6 from '../assets/sounds/L3Q1.mp3';
 
 const feelingsHotspots = [
   { id: 0, name: 'Comment ça va' },

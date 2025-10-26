@@ -15,7 +15,9 @@
 
 /* محتوى البوب أب */
 .popup-content {
-    background: #f0fff4;
+    background-image: url('../assets/popup/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: clamp(1rem, 2vw, 2.5rem);
     border-radius: clamp(10px, 1.5vw, 15px);
     max-width: clamp(300px, 60vw, 900px);
@@ -53,7 +55,9 @@
 
 /* تأثير الصوت */
 .popup-content audio {
+    margin-top: 80px;
     transition: transform 0.2s, box-shadow 0.2s;
+
 }
 .popup-content audio:hover {
     transform: translateY(-3px);

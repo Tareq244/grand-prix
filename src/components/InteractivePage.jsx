@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import './InteractivePage.css';
-import sound7 from "../assets/sounds/L4Q2.mp3";
 
 const InteractivePage = ({ items, foundItems, recentlyFound, onItemClick }) => {
     const [localFound, setLocalFound] = useState(foundItems);

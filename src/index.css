@@ -14,6 +14,7 @@ body {
     font-family: Comfortaa;
     position: relative;
     background: linear-gradient(to bottom right, #4f46e5, #7c3aed, #ec4899);
+    /* background: linear-gradient(to bottom right, #ec4899,#1e86c8, #ddebed, #21a198,#ec4899); */
 }
 
 .book {
@@ -25,7 +26,6 @@ body {
     border-radius: 20px;
 }
 
-/* وسائط الاستجابة @media للـ .book تبقى كما هي */
 @media (max-width: 768px) { .book { width: 28rem; height: 37rem; } }
 @media (max-width: 576px) { .book { width: 24rem; height: 32rem; } }
 @media (max-width: 480px) { .book { width: 22rem; height: 29rem; } }
@@ -75,7 +75,6 @@ body {
     transform: rotateY(-180deg);
 }
 
-/* هذا هو العنصر الذي يحمل الصورة كخلفية */
 .content {
     width: 100%;
     height: 100%;
@@ -88,7 +87,6 @@ body {
     transform: rotateY(180deg);
 }
 
-/* ... (تنسيقات الأزرار #prev-btn, #next-btn تبقى كما هي) ... */
 button {
     border: none;
     background-color: transparent;
@@ -109,7 +107,6 @@ button:hover svg { color: #333; }
 
 #prev-btn svg, #next-btn svg {
     font-size: 3.125rem;
-    /* background-color: #4a79bd; */
     transition: color 0.3s;
     color: #2c5287;
 }
@@ -132,10 +129,12 @@ button:hover svg { color: #333; }
 }
 
 .sound-button,
+.sound-buttonnn,
 .sound-button-secend,
 .sound-button-third,
 .sound-button-third1,
 .sound-button-third2,
+.sound-button-third3,
 .sound-button-p71,
 .sound-button-secend-p72,
 .sound-button-p8,
@@ -153,7 +152,8 @@ button:hover svg { color: #333; }
 .sound-button-p888,
 .sound-button-p8888,
 .sound-button-p88888,
-.sound-button-but
+.sound-button-but,
+.sound-button-butt
  {
     background-color: transparent; 
     border: none;
@@ -174,10 +174,12 @@ button:hover svg { color: #333; }
 }
 
 .sound-button:hover,
+.sound-buttonnn:hover,
 .sound-button-secend:hover,
 .sound-button-third:hover,
 .sound-button-third1:hover,
 .sound-button-third2:hover,
+.sound-button-third3:hover,
 .sound-button-p71:hover,
 .sound-button-secend-p72:hover,
 .sound-button-p8:hover,
@@ -195,7 +197,8 @@ button:hover svg { color: #333; }
 .sound-button-p888:hover,
 .sound-button-p8888:hover,
 .sound-button-p88888:hover,
-.sound-button-but:hover
+.sound-button-but:hover,
+.sound-button-butt:hover
 {
      background-color: transparent;
      color: transparent;
@@ -208,6 +211,12 @@ button:hover svg { color: #333; }
 .sound-button {
     top: 9%;
     left: 6.5%;
+}
+.sound-buttonnn {
+    top: 9%;
+    left: 1%;
+    color: #fff;
+    background-color: #ff5d9e;
 }
 .sound-button-L1Q2{
     top: 15%;
@@ -226,6 +235,13 @@ button:hover svg { color: #333; }
 .sound-button-third2{
     top: 62%;
     left: 8%;
+}
+
+.sound-button-third3{
+    top: 62%;
+    left: -0.3%;
+    background-color: #ff5d9e;
+    color: #fff;
 }
 
 .sound-button-p71{
@@ -286,6 +302,12 @@ button:hover svg { color: #333; }
 .sound-button-but{
     top: 18%;
     left: 8%;
+}
+.sound-button-butt{
+    top: 18%;
+    left: 3%;
+    background-color: #ff5d9e;
+    color: #fff;
 }
 .sound-button-p11{
     top: 61.5%;
@@ -500,14 +522,13 @@ button:hover svg { color: #333; }
 }
 
 
-/* Good Job Overlay */
 .goodjob-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* خلفية شبه شفافة */
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -538,7 +559,6 @@ button:hover svg { color: #333; }
     opacity: 0.9;
 }
 
-/* Animations */
 @keyframes fadeInOut {
     0% { 
         opacity: 0; 
@@ -577,7 +597,6 @@ button:hover svg { color: #333; }
     }
 }
 
-/* تأكد أن الصورة container فيها position relative */
 .popup-image-container {
     position: relative;
     display: inline-block;
@@ -658,15 +677,11 @@ button:hover svg { color: #333; }
   background-color: #fff ;
   border-radius: 5px;
   border: 2px solid #45a049;
-  /* padding: 5px; */
   font-size: 16px;
   transition: width 0.2s ease;
   box-sizing: content-box;
 }
 
-/* .inp1:hover{
-    transform: scaleX(2);     
-} */
 
 .l1q1-inp2{
   position: absolute;
@@ -682,13 +697,9 @@ button:hover svg { color: #333; }
 }
 .l1q1-inp1:hover,
 .l1q1-inp2:hover {
-    transform: scale(1.2); /* يكبر 20% عند التحويم */
-    transition: transform 0.2s ease; /* يضيف سلاسة */
+    transform: scale(1.2); 
+    transition: transform 0.2s ease; 
 }
-
-/* .inp2:hover{
-    transform: scaleX(2);     
-} */
 
 .l1q12-inp1,
 .l1q12-inp2,
@@ -733,8 +744,8 @@ button:hover svg { color: #333; }
 .l1q12-inp3:hover,
 .l1q12-inp4:hover,
 .l1q12-inp5:hover {
-    transform: scale(1.2); /* يكبر 20% عند التحويم */
-    transition: transform 0.2s ease; /* يضيف سلاسة */
+    transform: scale(1.2); 
+    transition: transform 0.2s ease; 
 }
 
 
@@ -799,10 +810,9 @@ button:hover svg { color: #333; }
 }
 
 
-/* الفقاعة */
 .bubble-cloud {
-  position: absolute; /* داخل الصورة */
-  top: 10%; /* تحكم موقعها بالنسبة للصورة */
+  position: absolute; 
+  top: 10%; 
   left: 10%;
   background: #ffffff;
   padding: 20px 40px;
@@ -811,7 +821,6 @@ button:hover svg { color: #333; }
   max-width: 60%;
 }
 
-/* الفقاعات الصغيرة */
 .bubble-cloud::after,
 .bubble-cloud::before {
   content: "";
@@ -821,7 +830,6 @@ button:hover svg { color: #333; }
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* الفقاعة الكبيرة السفلية */
 .bubble-cloud::after {
   width: 24px;
   height: 24px;
@@ -829,7 +837,6 @@ button:hover svg { color: #333; }
   left: 35px;
 }
 
-/* الفقاعة الصغيرة أسفلها */
 .bubble-cloud::before {
   width: 14px;
   height: 14px;
@@ -837,7 +844,6 @@ button:hover svg { color: #333; }
   left: 55px;
 }
 
-/* زر الإغلاق */
 .bubble-cloud .close {
   position: absolute;
   top: 6px;
@@ -860,12 +866,12 @@ button:hover svg { color: #333; }
   transform: scaleX(-1);
 }
 .bubble-cloud.flipped select {
-  transform: scaleX(-1); /* يرجع select لوضعه الطبيعي */
+  transform: scaleX(-1); 
 }
 .popup-image-container3 {
   position: relative;
-  width: 50vw;        /* عرض الشاشة بالكامل */
-  height: 60vh;       /* ارتفاع الشاشة بالكامل */
+  width: 50vw;       
+  height: 60vh;       
   display: flex;
   justify-content: center;
   align-items: center;
@@ -873,21 +879,16 @@ button:hover svg { color: #333; }
 }
 
 .character-images1 {
-  /* width: 40%;
-  height: 80%; */
-  object-fit: cover;   /* حتى تغطي الصورة الشاشة بدون تشويه */
+  object-fit: cover;   
   position: absolute;
-  /* top: 0;
-  left: 0;
-  z-index: 0; */
 }
 
 
 
 
 .bubbles-cloud {
-  position: absolute; /* داخل الصورة */
-  top: 10%; /* تحكم موقعها بالنسبة للصورة */
+  position: absolute; 
+  top: 10%; 
   left: 10%;
   background: #fff;
   padding: 20px 40px;
@@ -898,7 +899,6 @@ button:hover svg { color: #333; }
   font-weight: 900;
 }
 
-/* الفقاعات الصغيرة */
 .bubbles-cloud::after,
 .bubbles-cloud::before {
   content: "";
@@ -908,7 +908,6 @@ button:hover svg { color: #333; }
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* الفقاعة الكبيرة السفلية */
 .bubbles-cloud::after {
   width: 24px;
   height: 24px;
@@ -916,7 +915,6 @@ button:hover svg { color: #333; }
   left: 35px;
 }
 
-/* الفقاعة الصغيرة أسفلها */
 .bubbles-cloud::before {
   width: 14px;
   height: 14px;
@@ -952,7 +950,7 @@ button:hover svg { color: #333; }
   transform: scaleX(1);
 }
 .bubbles-cloud.flipped select {
-  transform: scaleX(-1); /* يرجع select لوضعه الطبيعي */
+  transform: scaleX(-1); 
 }
 .page8audio{
     position: absolute;
@@ -965,7 +963,6 @@ button:hover svg { color: #333; }
 .l3q2-quiz-container {
     display: flex; 
     flex-direction: column; 
-    /* align-items: center;  */
     justify-content: space-between; 
     padding: 20px;
     box-sizing: border-box;
@@ -1016,16 +1013,6 @@ button:hover svg { color: #333; }
   text-align: center;
 }
 
-
-
-
-/* .popup-image1 {
-    position: absolute;
-    width: 100px;
-    top: 30%;
-} */
-
-
 .popup-image-container1 {
   display: flex;
   gap: 10px;
@@ -1036,7 +1023,7 @@ button:hover svg { color: #333; }
 }
 
 .popup-image1 {
-  width: 150px; /* حجم الصورة */
+  width: 150px; 
   height: 80px;
   object-fit: contain;
   border-radius: 8px;
@@ -1083,11 +1070,10 @@ button:hover svg { color: #333; }
   border: 2px solid #45a049;
   border-radius: 5px;
   font-size: 16px;
-  transition: width 0.3s ease; /* 👈 يضيف تمدد ناعم */
+  transition: width 0.3s ease; 
   box-sizing: content-box;
 }
 
-/* أماكنهم حسب تصميمك */
 .l2q1-inp1 {
   top: 28%;
   left: 44%;
@@ -1117,11 +1103,10 @@ button:hover svg { color: #333; }
   border: 2px solid #45a049;
   border-radius: 5px;
   font-size: 16px;
-  transition: width 0.3s ease; /* 👈 يضيف تمدد ناعم */
+  transition: width 0.3s ease;
   box-sizing: content-box;
 }
 
-/* أماكنهم حسب تصميمك */
 .l2q12-inp1 {
   top: 20%;
   left: 33%;

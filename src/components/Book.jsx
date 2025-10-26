@@ -10,18 +10,9 @@ import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 
 //sounds
-import sound1 from '../assets/sounds/page5.mp3';
-import sound2 from '../assets/sounds/L1Q1.mp3';
-import sound3 from '../assets/sounds/L1Q1-1.mp3';
-import sound4 from '../assets/sounds/L1Q1-2.mp3';
-import sound5 from '../assets/sounds/L1Q4.mp3';
-import sound6 from '../assets/sounds/L2Q1.mp3';
-import sound61 from '../assets/sounds/L2Q11.mp3';
-import sound62 from '../assets/sounds/L2Q12.mp3';
-import sound7 from '../assets/sounds/L2Q2.mp3';
-import sound8 from '../assets/sounds/L3Q1.mp3';
-import sound9 from '../assets/sounds/L4Q1.mp3';
-import sound10 from '../assets/sounds/L4Q2.mp3';
+import sound1 from '../assets/sounds/1.mp3';
+import sound2 from '../assets/sounds/3.mp3';
+import sound3 from '../assets/sounds/5.mp3';
 
 
 
@@ -29,14 +20,14 @@ import Popup from "./Popup";
 import FeelingsQuiz from './FeelingsQuiz';
 import InteractiveHotspotQuestion from './InteractiveHotspotQuestion';
 //page 5
-import imgq1 from "../assets/popup/page4.png";
+
 //page 6
 import ch1 from "../assets/page6/characters1.png";
 import ch2 from "../assets/page6/character2.png";
 // import mainch from "../assets/page6/mainch.png";
 
 import L2Q2 from "./L2Q2";
-import L2Q1 from './L2Q1';
+import Q1 from './Q1';
 import L1Q12 from './L1Q12';
 import L1Q1 from './L1Q1';
 import Q2 from './Q2';
@@ -634,6 +625,15 @@ const Book = () => {
                                         </button>
 
                                         <button
+                                            className="sound-button-butt"
+                                            onClick={() =>
+                                                setCheckResult(null) ||
+                                                openPopupWithContent("secAQ1quiz")}
+                                        >
+                                            <FontAwesomeIcon icon={faArrowPointer} />
+                                        </button>
+
+                                        <button
                                             className="sound-button-p11"
                                             onClick={() =>
                                                 openPopupWithContent("secAQ2")
@@ -712,6 +712,15 @@ const Book = () => {
 
                                         </button>
 
+                                         <button
+                                            className="sound-buttonnn"
+                                            onClick={() =>
+                                                setCheckResult(null) ||
+                                                openPopupWithContent("secAQ1")}
+                                        >
+                                            <FontAwesomeIcon icon={faArrowPointer} />
+                                        </button>
+
                                         <button
                                             className="sound-button-secend"
                                             onClick={() =>
@@ -729,6 +738,16 @@ const Book = () => {
                                         >
                                             {/* <FontAwesomeIcon icon={faHeadphones} /> */}
                                         </button>
+
+                                        <button
+                                            className="sound-button-third3"
+                                            onClick={() =>
+                                                openPopupWithContent("secAQ51")
+                                            }
+                                        >
+                                            <FontAwesomeIcon icon={faArrowPointer} />
+                                        </button>
+
 
                                         <button
                                             className="sound-button-third2"
@@ -832,6 +851,11 @@ const Book = () => {
                     <div>
                         <audio src={sound1} controls className="page4audio" />
                     </div>
+                )}
+                
+                {popupType === "secAQ1quiz" && (
+                    <Q1 />
+
                 )}
 
                 {popupType === "secAQ2" && (

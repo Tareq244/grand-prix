@@ -10,8 +10,6 @@ import winkAnimatedsvg from "../assets/page8/2.svg";
 import happyStaticsvg from "../assets/page8/3.svg";
 import happyAnimatedsvg from "../assets/page8/4.svg";
 
-// استيراد الصوت
-import sound7 from '../assets/sounds/L2Q2.mp3';
 
 const L3Q2 = ({ title, questionNumber, onClose }) => {
   const audioRef = useRef(null);

@@ -31,6 +31,7 @@ import Q1 from './Q1';
 import L1Q12 from './L1Q12';
 import L1Q1 from './L1Q1';
 import Q2 from './Q2';
+import Q3 from './Q3'
 import FindItemsQuiz from './FindItemsQuiz';
 import L3Q2 from './L3Q2';
 import L4Q1 from './L4Q1';
@@ -74,6 +75,7 @@ import winkAnimatedsvg from "../assets/page8/2.svg";
 import happyStaticsvg from "../assets/page8/3.svg";
 import happyAnimatedsvg from "../assets/page8/4.svg";
 import { width } from "@fortawesome/free-regular-svg-icons/faAddressBook";
+
 
 
 const Book = () => {
@@ -650,32 +652,11 @@ const Book = () => {
                                     <div className="page6-layout">
 
 
-                                        <button
-                                            className="sound-button-secend-p72"
-                                            onClick={() =>
-                                                openPopupWithContent("secAQ7")
-                                            }
-                                        >
-                                            {/* <FontAwesomeIcon icon={faHeadphones} /> */}
-                                        </button>
+                                        
 
-                                        <button
-                                            className="sound-button-p7"
-                                            onClick={() =>
-                                                setCheckResult(null) ||
-                                                openPopupWithContent("secAQ8")}
-                                        >
-                                            {/* <FontAwesomeIcon icon={faArrowPointer} /> */}
-                                        </button>
+                                        
 
-                                        <button
-                                            className="sound-button-p71"
-                                            onClick={() =>
-                                                openPopupWithContent("secAQ10")
-                                            }
-                                        >
-                                            {/* <FontAwesomeIcon icon={faHeadphones} /> */}
-                                        </button>
+                                        
 
 
                                         <button
@@ -716,19 +697,19 @@ const Book = () => {
                                             className="sound-buttonnn"
                                             onClick={() =>
                                                 setCheckResult(null) ||
-                                                openPopupWithContent("secAQ1")}
+                                                openPopupWithContent("secAQ3quiz")}
                                         >
                                             <FontAwesomeIcon icon={faArrowPointer} />
                                         </button>
 
-                                        <button
+                                        {/* <button
                                             className="sound-button-secend"
                                             onClick={() =>
                                                 openPopupWithContent("secAQ4")
                                             }
                                         >
-                                            {/* <FontAwesomeIcon icon={faHeadphones} /> */}
-                                        </button>
+                                            <FontAwesomeIcon icon={faHeadphones} />
+                                        </button> */}
 
                                         <button
                                             className="sound-button-third1"
@@ -742,7 +723,7 @@ const Book = () => {
                                         <button
                                             className="sound-button-third3"
                                             onClick={() =>
-                                                openPopupWithContent("secAQ51")
+                                                openPopupWithContent("")
                                             }
                                         >
                                             <FontAwesomeIcon icon={faArrowPointer} />
@@ -752,22 +733,14 @@ const Book = () => {
                                         <button
                                             className="sound-button-third2"
                                             onClick={() =>
-                                                openPopupWithContent("secAQ52")
+                                                openPopupWithContent("")
                                             }
                                         >
                                             {/* <FontAwesomeIcon icon={faHeadphones} /> */}
                                         </button>
 
 
-                                        <button
-                                            className="sound-button-third"
-                                            onClick={() =>
-                                                openPopupWithContent("secAQ6")
-                                            }
-                                        >
-                                            {/* <FontAwesomeIcon icon={faHeadphones} /> */}
-                                        </button>
-
+                                       
                                         
 
 
@@ -813,15 +786,7 @@ const Book = () => {
                                             {/* <FontAwesomeIcon icon={faArrowPointer} /> */}
                                         </button>
 
-                                        <button
-                                            className="sound-button-p88888"
-                                            onClick={() => {
-                                                console.log("L3Q2 Clicked!");
-                                                openPopupWithContent("secAQ13")
-                                            }}
-                                        >
-                                            {/* <FontAwesomeIcon icon={faArrowPointer} /> */}
-                                        </button>
+                                        
                                     </div>
                                 )}
                             </div>
@@ -834,51 +799,40 @@ const Book = () => {
                 <FontAwesomeIcon icon={faArrowCircleRight} />
             </button>
 
+
+
+            
+
             <Popup isOpen={isPopupOpen} onClose={closePopup}>
 
-                {/* {popupType === "findItemsQuestion" && (
-                    <FindItemsQuiz
-                        title="Observe et trouve."
-                        questionNumber="1"
-                        audioSrc={sound1}
-                        backgroundImage={imgq1}
-                        items={page4Items}
-                        onClose={closePopup}
-                    />
-                )} */}
-
-                {popupType === "secAQ1" && (
-                    <div>
-                        <audio src={sound1} controls className="page4audio" />
-                    </div>
-                )}
-                
                 {popupType === "secAQ1quiz" && (
                     <Q1 />
 
                 )}
 
                 {popupType === "secAQ2" && (
-                    <div>
-                        <audio src={sound1} controls className="page4audio" />
-                    </div>
+                    <Q2 />
+                )}
+
+                {popupType === "secAQ3quiz" && (
+                    <Q3 />
                 )}
 
                 {popupType === "secAQ3" && (
-                    <div>
-                        <audio src={sound7} controls className="page4audio" />
-                    </div>
-                )}
-
-                {popupType === "secAQ4" && (
                     <div>
                         <audio src={sound2} controls className="page4audio" />
                     </div>
                 )}
 
+                {/* {popupType === "secAQ4" && (
+                    <div>
+                        <audio src={sound2} controls className="page4audio" />
+                    </div>
+                )} */}
+
                 {popupType === "secAQ51" && (
                     <div>
-                        <audio src={sound5} controls className="page4audio" />
+                        <audio src={sound3} controls className="page4audio" />
                     </div>
                 )}
 
@@ -1060,7 +1014,7 @@ const Book = () => {
 
 
             </Popup>
-        </>
+        </> 
     );
 };
 

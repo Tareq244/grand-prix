@@ -431,7 +431,7 @@ button:hover svg { color: #333; }
 
 .page4audio{
     position: absolute;
-    width: 400px !important;
+    width: 250px !important;
     bottom: 82%;
     left: 55%;
 }
@@ -607,10 +607,10 @@ button:hover svg { color: #333; }
 
 .qustion1{
     font-family: Comfortaa;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 100;
-    color: white;
-    background: #e8a747;
+    color: black;
+    background: transparent;
     width: 50%;
 }
 
@@ -665,7 +665,7 @@ button:hover svg { color: #333; }
 .qustion1 .qusetionnum
 {
     border-radius: 50%;
-    background-color: #35abb5;
+    background-color: #f89b5b;
     
 }
 .character-images{

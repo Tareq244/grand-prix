@@ -3,19 +3,19 @@
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* direction: rtl; */
-  width: 80%;
+  width: 700px;
   height: 100%;
-  margin-left: 100px;
 }
 
 .exercise-container {
+  position: relative;
   width: 100%;
   margin: 0 auto;
   background: white;
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  height: 100%;
+  height: auto;
 }
 
 .exercise-header {
@@ -52,7 +52,8 @@
 } */
 
  .btn {
-  top: 80%;
+  position: absolute;
+  top: 90% !important;
   padding: 12px 25px;
   font-size: 1rem;
   border: none;
@@ -87,7 +88,7 @@
   background: #45a049;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
-} */
+} 
 
 .segment-indicator {
   margin-top: 20px;
@@ -120,6 +121,7 @@
 
 .images-section {
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .images-section h3 {
@@ -272,7 +274,6 @@
 
 .btn-remove {
   position: absolute;
-  top: 5px;
   left: 5px;
   background: rgba(255, 0, 0, 0.8);
   color: white;
@@ -299,7 +300,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   flex-wrap: nowrap;
 }
 
@@ -307,7 +308,6 @@
 
 .btn-check {
   position: absolute;
-  top: 85%;
   left: 50%;
   width: 35%;
   background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
@@ -329,7 +329,6 @@
 .btn-reset {
   position: absolute;
   width: 30%;
-  top: 85%;
   left: 10%;
   background: #ff9800;
   color: white;
@@ -452,4 +451,12 @@
   .feedback p {
     font-size: 0.9rem;
   }
+}
+
+.qustionssss{
+  font-size: 22px;
+}
+.audio1{
+  margin-bottom: 40px;
+  margin-left: 18px;
 }

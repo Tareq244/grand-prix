@@ -39,16 +39,7 @@ const Q1 = () => {
 
   // معالج نهاية الصوت - الانتقال للمقطع التالي
   const handleAudioEnd = () => {
-    if (currentSegment < audioSegments.length - 1) {
-      setCurrentSegment(currentSegment + 1);
-      setTimeout(() => {
-        audioRef.current.src = audioSegments[currentSegment + 1];
-        audioRef.current.play();
-      }, 500);
-    } else {
-      setIsPlaying(false);
-      setCurrentSegment(0);
-    }
+    setIsPlaying(false);
   };
 
   // إعادة تشغيل الصوت من البداية
@@ -69,8 +60,26 @@ const Q1 = () => {
   const handleDrop = (e) => {
     e.preventDefault();
     if (draggedItem && !orderedImages.find(img => img.id === draggedItem.id)) {
-      setOrderedImages([...orderedImages, draggedItem]);
+      const newOrder = [...orderedImages, draggedItem];
+      setOrderedImages(newOrder);
       setDraggedItem(null);
+
+      // شغّل المقطع التالي إذا فيه مقاطع متبقية
+      setCurrentSegment((prev) => {
+        const next = prev + 1;
+        if (next < audioSegments.length) {
+          setTimeout(() => {
+            audioRef.current.src = audioSegments[next];
+            audioRef.current.play();
+          }, 400); // تأخير بسيط بعد الإسقاط
+          setIsPlaying(true);
+          return next;
+        } else {
+          // لو خلصت المقاطع، ما يعمل إشي
+          setIsPlaying(false);
+          return prev;
+        }
+      });
     }
   };
 
@@ -90,7 +99,7 @@ const Q1 = () => {
     const isOrderCorrect = orderedImages.every(
       (img, index) => img.correctOrder === index + 1
     ) && orderedImages.length === 4;
-    
+
     setIsCorrect(isOrderCorrect);
     setShowFeedback(true);
   };
@@ -106,97 +115,96 @@ const Q1 = () => {
 
   return (
     <>
-    
-    <div className="listening-exercise">
-      
-      <div className="exercise-container">
-        <div className="qustion1">
+
+      <div className="listening-exercise">
+
+        <div className="exercise-container">
+          <div className="qustion1 qustionssss">
             <h5>
               <span className="qusetionnum">1.</span>
               Écoute, répète et place dans l'ordre.
             </h5>
           </div>
 
-          <audio 
-            ref={audioRef} 
-            src={audioSegments[currentSegment]} 
-            controls 
-            className="page4audio" 
+          <audio
+            ref={audioRef}
+            src={audioSegments[currentSegment]}
+            controls
+            className="page4audio audio1"
             onEnded={handleAudioEnd}
           />
 
-        {/* قسم الصور المتاحة */}
-        <div className="images-section">
-          <h3>Select:</h3>
-          <div className="available-images">
-            {images.map(image => (
-              <div
-                key={image.id}
-                className={`image-card ${draggedItem?.id === image.id ? 'dragging' : ''} ${orderedImages.find(img => img.id === image.id) ? 'used' : ''}`}
-                draggable={!orderedImages.find(img => img.id === image.id)}
-                onDragStart={(e) => handleDragStart(e, image)}
-              >
-                <img src={image.src} alt={image.label} />
-                <p>{image.label}</p>
-              </div>
-            ))}
+          <div className="images-section">
+            <h3>Select:</h3>
+            <div className="available-images">
+              {images.map(image => (
+                <div
+                  key={image.id}
+                  className={`image-card ${draggedItem?.id === image.id ? 'dragging' : ''} ${orderedImages.find(img => img.id === image.id) ? 'used' : ''}`}
+                  draggable={!orderedImages.find(img => img.id === image.id)}
+                  onDragStart={(e) => handleDragStart(e, image)}
+                >
+                  <img src={image.src} alt={image.label} />
+                  <p>{image.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="drop-zone-section">
-          <h3>drop here:</h3>
-          <div
-            className="drop-zone"
-            onDrop={handleDrop}
-            onDragOver={handleDragOver}
-          >
-            {orderedImages.length === 0 ? (
-              <p className="drop-hint">put here</p>
-            ) : (
-              <div className="ordered-images">
-                {orderedImages.map((image, index) => (
-                  <div key={image.id} className="ordered-image-item">
-                    <div className="order-number">{index + 1}</div>
-                    <img src={image.src} alt={image.label} />
-                    <button
-                      className="btn-remove"
-                      onClick={() => removeImage(image.id)}
-                      title="إزالة"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                ))}
-              </div> 
-            )}
+          <div className="drop-zone-section">
+            <h3>drop here:</h3>
+            <div
+              className="drop-zone"
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+            >
+              {orderedImages.length === 0 ? (
+                <p className="drop-hint">put here</p>
+              ) : (
+                <div className="ordered-images">
+                  {orderedImages.map((image, index) => (
+                    <div key={image.id} className="ordered-image-item">
+                      <div className="order-number">{index + 1}</div>
+                      <img src={image.src} alt={image.label} />
+                      <button
+                        className="btn-remove"
+                        onClick={() => removeImage(image.id)}
+                        title="إزالة"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
+
+          <div className="control-buttons">
+            <button
+              className="btn btn-check"
+              onClick={checkOrder}
+              disabled={orderedImages.length !== 4}
+            >
+              check ✓
+            </button>
+
+            <button
+              className="btn btn-reset"
+              onClick={resetExercise}
+            >
+              Rest ↻
+            </button>
+          </div>
+
+          {showFeedback && (
+            isCorrect
+              ? ValidationAlert.success("Good Job!", "You got all answers right!")
+              : ValidationAlert.error("Try Again!", "Some answers are incorrect.")
+          )}
+
         </div>
-
-        <div className="control-buttons">
-          <button
-            className="btn btn-check"
-            onClick={checkOrder}
-            disabled={orderedImages.length !== 4}
-          >
-            check ✓
-          </button>
-          
-          <button
-            className="btn btn-reset"
-            onClick={resetExercise}
-          >
-            Rest ↻
-          </button>
-        </div>
-
-        {showFeedback && (
-  isCorrect
-    ? ValidationAlert.success("Good Job!", "You got all answers right!")
-    : ValidationAlert.error("Try Again!", "Some answers are incorrect.")
-)}
-
       </div>
-    </div>
     </>
   );
 };

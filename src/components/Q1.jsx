@@ -1,5 +1,12 @@
 import React, { useState, useRef } from 'react';
 import './Q1.css';
+import ValidationAlert from "./ValidationAlert";
+
+import sound1 from '../assets/sounds/11.mp3';
+import sound2 from '../assets/sounds/12.mp3';
+import sound3 from '../assets/sounds/13.mp3';
+import sound4 from '../assets/sounds/14.mp3';
+
 
 const Q1 = () => {
   // حالة الصور - يمكنك استبدال الروابط بصورك الخاصة
@@ -18,12 +25,8 @@ const Q1 = () => {
   const [isCorrect, setIsCorrect] = useState(false);
   const audioRef = useRef(null);
 
-  const audioSegments = [
-    '../assets/sounds/1.mp3',
-    '../assets/sounds/1.mp3',
-    '../assets/sounds/1.mp3',
-    '../assets/sounds/1.mp3',
-  ];
+  const audioSegments = [sound1, sound2, sound3, sound4];
+
 
   // تشغيل الصوت
   const playAudio = async () => {
@@ -102,53 +105,29 @@ const Q1 = () => {
   };
 
   return (
+    <>
+    
     <div className="listening-exercise">
+      
       <div className="exercise-container">
-        {/* رأس التمرين */}
-        <div className="exercise-header">
-          <h2>تمرين الاستماع والترتيب</h2>
-          <p>استمع إلى المقاطع الصوتية ثم رتب الصور بالترتيب الصحيح</p>
-        </div>
+        <div className="qustion1">
+            <h5>
+              <span className="qusetionnum">1.</span>
+              Écoute, répète et place dans l'ordre.
+            </h5>
+          </div>
 
-        {/* قسم الصوت */}
-        <div className="audio-section">
-          <audio
-            ref={audioRef}
+          <audio 
+            ref={audioRef} 
+            src={audioSegments[currentSegment]} 
+            controls 
+            className="page4audio" 
             onEnded={handleAudioEnd}
-            style={{ display: 'none' }}
           />
-          
-          <div className="audio-controls">
-            <button 
-              className="btn btn-play"
-              onClick={playAudio}
-              disabled={isPlaying}
-            >
-              🔊 استمع
-            </button>
-            
-            <button 
-              className="btn btn-repeat"
-              onClick={playAgain}
-            >
-              🔁 إعادة
-            </button>
-          </div>
-
-          <div className="segment-indicator">
-            <p>المقطع الحالي: <span>{currentSegment + 1}</span> من <span>4</span></p>
-            <div className="progress-bar">
-              <div 
-                className="progress-fill"
-                style={{ width: `${((currentSegment + 1) / 4) * 100}%` }}
-              ></div>
-            </div>
-          </div>
-        </div>
 
         {/* قسم الصور المتاحة */}
         <div className="images-section">
-          <h3>الصور المتاحة:</h3>
+          <h3>Select:</h3>
           <div className="available-images">
             {images.map(image => (
               <div
@@ -164,16 +143,15 @@ const Q1 = () => {
           </div>
         </div>
 
-        {/* منطقة الإفلات والترتيب */}
         <div className="drop-zone-section">
-          <h3>رتب الصور هنا:</h3>
+          <h3>drop here:</h3>
           <div
             className="drop-zone"
             onDrop={handleDrop}
             onDragOver={handleDragOver}
           >
             {orderedImages.length === 0 ? (
-              <p className="drop-hint">اسحب الصور هنا لترتيبها</p>
+              <p className="drop-hint">put here</p>
             ) : (
               <div className="ordered-images">
                 {orderedImages.map((image, index) => (
@@ -189,47 +167,37 @@ const Q1 = () => {
                     </button>
                   </div>
                 ))}
-              </div>
+              </div> 
             )}
           </div>
         </div>
 
-        {/* أزرار التحكم */}
         <div className="control-buttons">
           <button
             className="btn btn-check"
             onClick={checkOrder}
             disabled={orderedImages.length !== 4}
           >
-            ✓ تحقق من الإجابة
+            check ✓
           </button>
           
           <button
             className="btn btn-reset"
             onClick={resetExercise}
           >
-            ↻ إعادة تعيين
+            Rest ↻
           </button>
         </div>
 
-        {/* رسالة التغذية الراجعة */}
         {showFeedback && (
-          <div className={`feedback ${isCorrect ? 'success' : 'error'}`}>
-            {isCorrect ? (
-              <>
-                <h4>🎉 ممتاز!</h4>
-                <p>لقد رتبت الصور بالترتيب الصحيح!</p>
-              </>
-            ) : (
-              <>
-                <h4>❌ محاولة أخرى</h4>
-                <p>الترتيب غير صحيح. حاول مرة أخرى!</p>
-              </>
-            )}
-          </div>
-        )}
+  isCorrect
+    ? ValidationAlert.success("Good Job!", "You got all answers right!")
+    : ValidationAlert.error("Try Again!", "Some answers are incorrect.")
+)}
+
       </div>
     </div>
+    </>
   );
 };
 

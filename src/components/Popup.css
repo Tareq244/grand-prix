@@ -15,12 +15,14 @@
 
 /* محتوى البوب أب */
 .popup-content {
-    background-image: url('../assets/popup/bg.png');
+    /* background-image: url('../assets/popup/bg.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     padding: clamp(1rem, 2vw, 2.5rem);
     border-radius: clamp(10px, 1.5vw, 15px);
-    max-width: clamp(300px, 60vw, 900px);
+    max-width: 100%;
+    width: 90%;
+    height: 95%;
     position: relative;
     box-shadow: 0 clamp(5px, 1vw, 10px) clamp(15px, 2vw, 25px) rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -28,6 +30,7 @@
     flex-direction: column;
     gap: clamp(0.5rem, 1vw, 1rem);
     animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 95%;
 }
 
 /* زر الإغلاق */

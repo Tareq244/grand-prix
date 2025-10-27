@@ -1,47 +1,48 @@
-/* .listening-exercise {
-  width: 100%;
-  min-height: 100vh;
+.listening-exercise {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  direction: rtl;
-} */
+  /* direction: rtl; */
+  width: 80%;
+  height: 100%;
+  margin-left: 100px;
+}
 
-/* .exercise-container {
-  max-width: 1000px;
+.exercise-container {
+  width: 100%;
   margin: 0 auto;
   background: white;
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-} */
+  height: 100%;
+}
 
-/* .exercise-header {
+.exercise-header {
   text-align: center;
-  margin-bottom: 40px;
   border-bottom: 3px solid #667eea;
-  padding-bottom: 20px;
-} */
+  
+}
 
-/* .exercise-header h2 {
+.exercise-header h2 {
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 10px;
-} */
+}
 
-/* .exercise-header p {
+.exercise-header p {
   font-size: 1.1rem;
   color: #666;
-} */
+}
 
-/* .audio-section {
+ .audio-section {
   background: #f8f9fa;
   border-radius: 10px;
   padding: 25px;
   margin-bottom: 30px;
   text-align: center;
 }
-
+/* 
 .audio-controls {
   display: flex;
   justify-content: center;
@@ -50,7 +51,8 @@
   flex-wrap: wrap;
 } */
 
-/* .btn {
+ .btn {
+  top: 80%;
   padding: 12px 25px;
   font-size: 1rem;
   border: none;
@@ -129,10 +131,15 @@
 }
 
 .available-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  justify-content: center; /* لتوسيط الصور */
+  align-items: center;
   gap: 15px;
+  flex-wrap: nowrap; /* حتى تبقى الصور في صف واحد */
+  overflow-x: auto;  /* يضيف تمرير جانبي لو الصور كثيرة */
+  padding: 10px 0;
 }
+
 
 .image-card {
   background: white;
@@ -142,6 +149,7 @@
   cursor: grab;
   transition: all 0.3s ease;
   text-align: center;
+  width: 25%;
 }
 
 .image-card:hover:not(.used) {
@@ -167,6 +175,7 @@
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 8px;
+  
 }
 
 .image-card p {
@@ -176,6 +185,7 @@
 
 .drop-zone-section {
   margin-bottom: 30px;
+  
 }
 
 .drop-zone-section h3 {
@@ -196,6 +206,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  
 }
 
 .drop-zone:hover {
@@ -207,14 +218,20 @@
   color: #999;
   font-size: 1.1rem;
   text-align: center;
+  
 }
 
 .ordered-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
-  width: 100%;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  padding: 10px 0;
+  
 }
+
 
 .ordered-image-item {
   position: relative;
@@ -252,7 +269,7 @@
   object-fit: cover;
   display: block;
 }
-/* 
+
 .btn-remove {
   position: absolute;
   top: 5px;
@@ -276,16 +293,23 @@
   background: rgba(255, 0, 0, 1);
   transform: scale(1.1);
 }
-
+ 
 .control-buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   margin-bottom: 30px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
+
+
 .btn-check {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: 35%;
   background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
   color: white;
   padding: 14px 35px;
@@ -303,6 +327,10 @@
 }
 
 .btn-reset {
+  position: absolute;
+  width: 30%;
+  top: 85%;
+  left: 10%;
   background: #ff9800;
   color: white;
   padding: 14px 35px;
@@ -313,36 +341,9 @@
   background: #f57c00;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
-} */
-
-.feedback {
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  animation: slideIn 0.3s ease;
-  margin-top: 20px;
 }
 
-.feedback.success {
-  background: #d4edda;
-  border: 2px solid #28a745;
-  color: #155724;
-}
 
-.feedback.error {
-  background: #f8d7da;
-  border: 2px solid #f5c6cb;
-  color: #721c24;
-}
-
-.feedback h4 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.feedback p {
-  font-size: 1rem;
-}
 
 @keyframes slideIn {
   from {

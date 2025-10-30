@@ -6,7 +6,6 @@ import {
     faHeadphones,
     faArrowPointer,
 } from "@fortawesome/free-solid-svg-icons";
-import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 
 //sounds
@@ -17,36 +16,13 @@ import sound3 from '../assets/sounds/5.mp3';
 
 
 import Popup from "./Popup";
-// import FeelingsQuiz from './FeelingsQuiz';
-// import InteractiveHotspotQuestion from './InteractiveHotspotQuestion';
-//page 5
-
-//page 6
-// import ch1 from "../assets/page6/characters1.png";
-// import ch2 from "../assets/page6/character2.png";
-// import mainch from "../assets/page6/mainch.png";
-
-// import L2Q2 from "./L2Q2";
 import Q1 from './Q1';
-// import L1Q12 from './L1Q12';
-// import L1Q1 from './L1Q1';
 import Q2 from './Q2';
 import Q3 from './Q3';
 import Q5 from './Q5';
 import Q7 from './Q7';
 import Q11 from './Q11';
 import Q12 from './Q12';
-// import FindItemsQuiz from './FindItemsQuiz';
-// import L3Q2 from './L3Q2';
-// import L4Q1 from './L4Q1';
-
-//page 7
-import ch3 from "../assets/page7/Q11.png";
-import ch8 from "../assets/page7/Q12.png";
-
-import ch4 from "../assets/page7/conv.png";
-//page 9
-// import ImageSelectPopup from "./ImageSelectPopup";
 
 import img1 from "../assets/1.png";
 import img2 from "../assets/2.png";
@@ -58,27 +34,6 @@ import img7 from "../assets/7.png";
 import img8 from "../assets/8.png";
 
 import img10 from "../assets/page9/blue.png";
-
-// import L2Q12 from './L2Q12';
-
-
-import friendsImage from "../assets/page8/1.svg";
-import teacherImage from "../assets/page8/2.svg";
-
-
-// import Character from "./Character";
-// import InteractivePage from "./InteractivePage";
-
-// import winkStatic from "../assets/page8/1.gif";
-// import winkAnimated from "../assets/page8/2.gif";
-// import happyStatic from "../assets/page8/3.gif";
-// import happyAnimated from "../assets/page8/4.gif";
-
-// import winkStaticsvg from "../assets/page8/1.svg";
-// import winkAnimatedsvg from "../assets/page8/2.svg";
-// import happyStaticsvg from "../assets/page8/3.svg";
-// import happyAnimatedsvg from "../assets/page8/4.svg";
-import { width } from "@fortawesome/free-regular-svg-icons/faAddressBook";
 
 
 
@@ -232,23 +187,7 @@ const Book = () => {
         closePopup();
     };
 
-    // const handleCheckAnswer = () => {
-    //     if (popupType === "findItemsQuestion") {
-    //         const allFound = foundItems.every(Boolean);
-    //         if (allFound) {
-    //             setCheckResult("success");
-    //         } else {
-    //             setCheckResult("fail");
-    //         }
-    //     } else if (popupType === "q2") {
-    //         const allFound = foundItemsQ2[4] && foundItemsQ2[5] && foundItemsQ2[6];
-    //         if (allFound) {
-    //             setCheckResult("success");
-    //         } else {
-    //             setCheckResult("fail");
-    //         }
-    //     }
-    // };
+    
 
     const handleCheckAnswerL2q1 = () => {
         const correctAnswers = ["Henri", "Jacques", "Robert", "Léo"];
@@ -265,7 +204,7 @@ const Book = () => {
 
 
     const handleCheckAnswer1 = () => {
-        // نتحقق مع تجاهل الحروف الصغيرة/الكبيرة والمسافات
+        
         if (
             answer1.trim().toLowerCase() === "lili".toLowerCase() &&
             answer2.trim().toLowerCase() === "léo".toLowerCase()
@@ -844,33 +783,13 @@ const Book = () => {
                     </div>
                 )}
 
-                {/* {popupType === "secAQ8" && (
-                    <L2Q1
-                        title="Écoute, montre et écris."
-                        questionNumber="1"
-                        audioSrc={sound61}
-                        characterImage={ch3}
-                        correctAnswers={["Henri", "Jacques"]}
-                        onSuccess={goToNextQuestion1}
-                    />
-
-                )} */}
+               
 
                 {popupType === "secAQ9" && (
                     <Q7 />
                 )}
 
-                {/* {popupType === "secAQ10" && (
-                    <L2Q2
-                        title="Écoute et réponds."
-                        questionNumber="2"
-                        audioSrc={sound7}
-                        characterImage={ch4}
-                        characterImage1={ch4}
-                        bubbles={customsBubbles}
-                        onClose={closePopup}
-                    />
-                )} */}
+                
 
                 {popupType === "secAQ11" && (
                     <Q11 />
@@ -879,133 +798,6 @@ const Book = () => {
                 {popupType === "secAQ122" && (
                     <Q12 />
                 )}
-
-                
-
-                {/* {popupType === "secAQ112" && (
-                    <L1Q12
-                        title="Écoute, montre et écris"
-                        questionNumber="2"
-                        audioSrc={sound4}
-                        characterImage={ch2}
-                        correctAnswers={["Madame Dubois", "Madame Dubois", "Madame Dubois", "Madame Dubois", "Les enfants"]}
-                        onClose={closePopup}
-                    />
-                )} */}
-
-                
-
-                {/* {popupType === "L2Q12" && (
-                    <L2Q12
-                        title="Écoute, montre et écris"
-                        questionNumber="2"
-                        audioSrc={sound62}
-                        characterImage={ch8}
-                        correctAnswers={["Bonjour", "Bonjour", "Salut"]}
-                        onSuccess={closePopup}
-                    />
-
-                )} */}
-
-                
-
-                {/* {popupType === "l3q1" && (
-                    <FeelingsQuiz onClose={closePopup} />
-                )}
-
-                {popupType === "l4q2" && (
-                    <>
-                        <div className="qustion1">
-                            <h5><span className="qusetionnum">2.</span> Écoute, montre et corrige les erreurs.</h5>
-                        </div>
-                        <audio src={sound7} controls className="page4audio" />
-                        <InteractiveHotspotQuestion
-                            imageSources={l4q2Images}
-                            audioSrc={sound10}
-                            incorrectIndices={[1, 2]}
-                        />
-
-                        <div className="results-container">
-                            <button
-                                type="button"
-                                className="nextq2"
-                                onClick={closePopup}
-                            >
-                                close
-                            </button>
-                        </div>
-                    </>
-                )}
-
-                {popupType === "secAQ12" && (
-                    <L3Q2
-                        onClose={closePopup}
-                        title="Écoute et réponds."
-                        questionNumber="2"
-                    />
-                )}
-
-                {popupType === "L4Q1" && (
-
-                    <L4Q1
-                        items={matchingItems}
-                        audioSrc={sound9}
-                        onComplete={handleMatchingComplete}
-                        title="Écoute et trouve un objet dans la classe."
-                        questionNumber="1"
-                        checkpoints={[12, 14, 16, 18, 21]}
-                        onClose={closePopup}
-                    />
-                )} */}
-
-
-
-
-
-
-                {/* voice */}
-
-                {/* {popupType === "voiceq1" && (
-                    <div>
-                        <audio src={sound1} controls className="page4audio" />
-                    </div>
-                )} */}
-
-                
-
-                {popupType === "voiceL1q1" && (
-                    <div>
-                        <audio src={sound2} controls className="page4audio" />
-                    </div>
-                )}
-
-                
-
-                
-
-                
-
-                
-
-                {popupType === "voicel4q1" && (
-                    <div>
-                        <audio src={sound9} controls className="page4audio" />
-                    </div>
-                )}
-
-                {popupType === "voicel4q2" && (
-                    <div>
-                        <audio src={sound10} controls className="page4audio" />
-                    </div>
-                )}
-
-
-
-
-
-
-
-
 
 
                 {popupType === "anotherQuestion" && (

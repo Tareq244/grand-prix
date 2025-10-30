@@ -1,4 +1,3 @@
-// src/components/Q7.jsx
 
 import { useState } from 'react';
 import { Check } from 'lucide-react';
@@ -25,7 +24,6 @@ const Q7 = () => {
 
   return (
     <div className="q7-page-container">
-      {/* ملاحظة: قمت بتصحيح اسم الكلاس من q9qustion إلى q7qustion ليتناسب مع المكون */}
       <div className="qustion1 ">
         <h5>
           <span className="qusetionnum">9.</span>

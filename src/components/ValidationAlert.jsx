@@ -1,4 +1,4 @@
-// components/ValidationAlert.js
+
 import Swal from "sweetalert2";
 import './ValidationAlert.css';
 import good from "../assets/alert/goodjob.gif";

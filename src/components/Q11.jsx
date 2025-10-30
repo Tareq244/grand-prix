@@ -35,7 +35,6 @@ export default function Q11() {
       [blank]: value
     }));
 
-    // تمديد عرض الـ input مع الكتابة
     const input = inputRefs[blank].current;
     if (input) {
       const tempSpan = document.createElement('span');
@@ -53,24 +52,20 @@ export default function Q11() {
   
 
   const checkAnswers = () => {
-    // نحسب النتيجة أولاً
     const currentScore = Object.keys(answers).filter(blank => 
       answers[blank].trim().toLowerCase() === correctAnswers[blank].toLowerCase()
     ).length;
 
-    // نعرض الحقول الصحيحة والخاطئة
     setShowResults(true);
 
-    // نتحقق من اكتمال جميع الحقول
     const allFieldsFilled = Object.values(answers).every(answer => answer.trim() !== '');
     if (!allFieldsFilled) {
       ValidationAlert.info("Oops!", "Please complete all fields.");
-      // نرجع الحالة إلى ما كانت عليه لأن التحقق لم يكتمل
+      
       setShowResults(false); 
       return;
     }
 
-    // بناءً على النتيجة، نعرض النافذة المنبثقة المناسبة
     if (currentScore === 5) {
       ValidationAlert.success("Bravoo!", "You got all answers right!");
     } else {

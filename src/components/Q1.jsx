@@ -29,8 +29,6 @@ const Q1 = () => {
 
   const audioSegments = [sound1, sound2, sound3, sound4];
 
-
-  // تشغيل الصوت
   const playAudio = async () => {
     if (currentSegment < audioSegments.length) {
       setIsPlaying(true);
@@ -39,12 +37,10 @@ const Q1 = () => {
     }
   };
 
-  // معالج نهاية الصوت - الانتقال للمقطع التالي
   const handleAudioEnd = () => {
     setIsPlaying(false);
   };
 
-  // إعادة تشغيل الصوت من البداية
   const playAgain = () => {
     setCurrentSegment(0);
     setIsPlaying(true);
@@ -52,13 +48,11 @@ const Q1 = () => {
     audioRef.current.play();
   };
 
-  // معالج السحب
   const handleDragStart = (e, image) => {
     setDraggedItem(image);
     e.dataTransfer.effectAllowed = 'move';
   };
 
-  // معالج الإفلات
   const handleDrop = (e) => {
     e.preventDefault();
     if (draggedItem && !orderedImages.find(img => img.id === draggedItem.id)) {
@@ -66,18 +60,17 @@ const Q1 = () => {
       setOrderedImages(newOrder);
       setDraggedItem(null);
 
-      // شغّل المقطع التالي إذا فيه مقاطع متبقية
       setCurrentSegment((prev) => {
         const next = prev + 1;
         if (next < audioSegments.length) {
           setTimeout(() => {
             audioRef.current.src = audioSegments[next];
             audioRef.current.play();
-          }, 400); // تأخير بسيط بعد الإسقاط
+          }, 400); 
           setIsPlaying(true);
           return next;
         } else {
-          // لو خلصت المقاطع، ما يعمل إشي
+          
           setIsPlaying(false);
           return prev;
         }
@@ -85,18 +78,15 @@ const Q1 = () => {
     }
   };
 
-  // معالج السماح بالإفلات
   const handleDragOver = (e) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
   };
 
-  // إزالة صورة من الترتيب
   const removeImage = (id) => {
     setOrderedImages(orderedImages.filter(img => img.id !== id));
   };
 
-  // التحقق من الترتيب الصحيح
   const checkOrder = () => {
     const isOrderCorrect = orderedImages.every(
       (img, index) => img.correctOrder === index + 1
@@ -106,7 +96,6 @@ const Q1 = () => {
     setShowFeedback(true);
   };
 
-  // إعادة تعيين التمرين
   const resetExercise = () => {
     setOrderedImages([]);
     setShowFeedback(false);

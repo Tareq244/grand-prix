@@ -14,7 +14,6 @@ body {
     font-family: Comfortaa;
     position: relative;
     background: linear-gradient(to bottom right, #4f46e5, #7c3aed, #ec4899);
-    /* background: linear-gradient(to bottom right, #ec4899,#1e86c8, #ddebed, #21a198,#ec4899); */
 }
 
 .book {
@@ -1182,3 +1181,5 @@ button:hover svg { color: #333; }
 .sec4audio::-webkit-media-controls-volume-slider {
   background-color: #bbdefb;
 }
+
+

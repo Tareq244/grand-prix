@@ -130,9 +130,9 @@
 }
 
 .q5-try-btn {
-    background-color: #ffc107; /* أصفر */
+    background-color: #ffc107; 
     color: #212529;
-    left: 5%; /* تحديد الموضع */
+    left: 5%; 
 }
 .q5-try-btn:hover {
     background-color: #e0a800;

@@ -1,4 +1,3 @@
-// src/components/Q5.jsx
 
 import React, { useState } from 'react';
 import './Q5.css'; 
@@ -16,7 +15,7 @@ const Q5 = ({ sound }) => {
   };
 
   const checkAnswers = () => {
-    // ملاحظة: قمت بتعديل الأسماء لتطابق المثال الشائع في التمارين الفرنسية
+   
     const correctBoyName = 'Antoine';
     const correctGirlName = 'aime';
 

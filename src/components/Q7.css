@@ -1,21 +1,20 @@
-/* --- الحاوية الرئيسية للنشاط --- */
+
 .q7-page-container {
     padding: 20px;
     font-family: 'Helvetica Neue', sans-serif;
-    background-color: #f8f9fa; /* لون خلفية موحد */
-    border-radius: 16px; /* يجب أن تكون الحاوية الرئيسية دائرية أيضًا */
+    background-color: #f8f9fa; 
+    border-radius: 16px; 
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     max-width: 800px;
     margin: auto;
     position: relative;
 }
 
-/* --- عنوان السؤال --- */
-.q7qustion { /* تم تغيير الاسم من q9qustion ليتوافق مع المكون */
+.q7qustion { 
     font-size: 1.1rem;
     color: #343a40;
     margin-bottom: 20px;
-    text-align: center; /* توسيط العنوان */
+    text-align: center; 
 }
 .q7qustion .qusetionnum {
     color: #4a90e2;

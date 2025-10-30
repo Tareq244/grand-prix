@@ -1,7 +1,7 @@
 .greeting-exercise {
   width: 700px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  direction: ltr; /* اجعل النص من اليسار لليمين */
+  direction: ltr; 
   text-align: left;
   padding: -80px;
 }

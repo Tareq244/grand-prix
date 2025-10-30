@@ -1,4 +1,3 @@
-// src/components/Q12.jsx
 
 import React, { useState } from 'react';
 import './Q12.css';
@@ -8,7 +7,7 @@ export default function Q12() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // منع السلوك الافتراضي للزر داخل نموذج
+    e.preventDefault(); 
     if (response.trim()) {
       setSubmitted(true);
       
@@ -34,11 +33,11 @@ export default function Q12() {
             onChange={(e) => setResponse(e.target.value)}
             placeholder="Écrivez ici votre présentation..."
             className="q12-textarea"
-            rows={8} // تقليل عدد الصفوف الافتراضي
+            rows={8} 
           />
 
           <button 
-            type="submit" // تحديد نوع الزر
+            type="submit" 
             className="q12-submit-btn"
             disabled={!response.trim()}
           >

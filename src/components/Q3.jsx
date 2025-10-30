@@ -1,4 +1,3 @@
-// src/components/Q3.jsx
 
 import React, { useState, useRef } from 'react';
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
@@ -89,17 +88,16 @@ const Q3 = () => {
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <div className="exercise-layout-vertical">
           
-          {/* قسم الصور ومناطق الإفلات */}
           <div className="image-section-horizontal">
             {exerciseData.images.map((imageSrc, index) => (
               <Droppable key={`drop-${index + 1}`} droppableId={`drop-${index + 1}`}>
-                {(provided, snapshot) => ( // أضف snapshot هنا
+                {(provided, snapshot) => ( 
                   <div className="image-container">
                     <img src={imageSrc} alt={`Visual hint ${index + 1}`} />
                     <div 
                       ref={provided.innerRef} 
                       {...provided.droppableProps}
-                      // أضف الكلاس الشرطي هنا
+                     
                       className={`drop-box ${snapshot.isDraggingOver ? 'is-over' : ''}`}
                     >
                       {droppedLetters[`drop-${index + 1}`] ? (

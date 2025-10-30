@@ -1,0 +1,103 @@
+.q5-activity-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 100px;
+  font-family: sans-serif;
+}
+
+.q5-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.q5-header h5 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+.page6audio{
+    position: absolute;
+    bottom: 70%;
+}
+.q5-body {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  width: 100%;
+}
+
+.q5-character-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.q5-character-img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.q5-character-group label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+  
+}
+
+.q5-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  background: transparent;
+  text-decoration: underline;
+}
+.q5-input:hover{
+    transform: scale(1.1);
+    background: rgb(0, 0, 0,0.1);
+}
+
+.q5-submit-btn {
+    position: absolute;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  top: 85%;
+  left: 65%;
+}
+.q5-submit-btn:hover {
+  background-color: #218838;
+}
+
+.q5-try-btn {
+  background-color: #888080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: center;
+  top: 85%;
+  right: 65%;
+}
+.q5-try-btn:hover {
+  background-color: #686262;
+}
+.q5-character-group:hover .q5-character-img {
+    transform: scale(1.05); 
+}

@@ -1,10 +1,11 @@
 .listening-exercise {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8e9ad2 0%, #ddebed 100%);
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* direction: rtl; */
   width: 700px;
   height: 100%;
+  border-radius: 30px;
 }
 
 .exercise-container {

@@ -17,24 +17,26 @@ import sound3 from '../assets/sounds/5.mp3';
 
 
 import Popup from "./Popup";
-import FeelingsQuiz from './FeelingsQuiz';
-import InteractiveHotspotQuestion from './InteractiveHotspotQuestion';
+// import FeelingsQuiz from './FeelingsQuiz';
+// import InteractiveHotspotQuestion from './InteractiveHotspotQuestion';
 //page 5
 
 //page 6
-import ch1 from "../assets/page6/characters1.png";
-import ch2 from "../assets/page6/character2.png";
+// import ch1 from "../assets/page6/characters1.png";
+// import ch2 from "../assets/page6/character2.png";
 // import mainch from "../assets/page6/mainch.png";
 
-import L2Q2 from "./L2Q2";
+// import L2Q2 from "./L2Q2";
 import Q1 from './Q1';
-import L1Q12 from './L1Q12';
-import L1Q1 from './L1Q1';
+// import L1Q12 from './L1Q12';
+// import L1Q1 from './L1Q1';
 import Q2 from './Q2';
-import Q3 from './Q3'
-import FindItemsQuiz from './FindItemsQuiz';
-import L3Q2 from './L3Q2';
-import L4Q1 from './L4Q1';
+import Q3 from './Q3';
+import Q5 from './Q5';
+import Q7 from './Q7';
+// import FindItemsQuiz from './FindItemsQuiz';
+// import L3Q2 from './L3Q2';
+// import L4Q1 from './L4Q1';
 
 //page 7
 import ch3 from "../assets/page7/Q11.png";
@@ -42,7 +44,7 @@ import ch8 from "../assets/page7/Q12.png";
 
 import ch4 from "../assets/page7/conv.png";
 //page 9
-import ImageSelectPopup from "./ImageSelectPopup";
+// import ImageSelectPopup from "./ImageSelectPopup";
 
 import img1 from "../assets/1.png";
 import img2 from "../assets/2.png";
@@ -55,25 +57,25 @@ import img8 from "../assets/8.png";
 
 import img10 from "../assets/page9/blue.png";
 
-import L2Q12 from './L2Q12';
+// import L2Q12 from './L2Q12';
 
 
 import friendsImage from "../assets/page8/1.svg";
 import teacherImage from "../assets/page8/2.svg";
 
 
-import Character from "./Character";
-import InteractivePage from "./InteractivePage";
+// import Character from "./Character";
+// import InteractivePage from "./InteractivePage";
 
-import winkStatic from "../assets/page8/1.gif";
-import winkAnimated from "../assets/page8/2.gif";
-import happyStatic from "../assets/page8/3.gif";
-import happyAnimated from "../assets/page8/4.gif";
+// import winkStatic from "../assets/page8/1.gif";
+// import winkAnimated from "../assets/page8/2.gif";
+// import happyStatic from "../assets/page8/3.gif";
+// import happyAnimated from "../assets/page8/4.gif";
 
-import winkStaticsvg from "../assets/page8/1.svg";
-import winkAnimatedsvg from "../assets/page8/2.svg";
-import happyStaticsvg from "../assets/page8/3.svg";
-import happyAnimatedsvg from "../assets/page8/4.svg";
+// import winkStaticsvg from "../assets/page8/1.svg";
+// import winkAnimatedsvg from "../assets/page8/2.svg";
+// import happyStaticsvg from "../assets/page8/3.svg";
+// import happyAnimatedsvg from "../assets/page8/4.svg";
 import { width } from "@fortawesome/free-regular-svg-icons/faAddressBook";
 
 
@@ -649,14 +651,7 @@ const Book = () => {
 
                                 {/* page 7 */}
                                 {index === 3 && (
-                                    <div className="page6-layout">
-
-
-                                        
-
-                                        
-
-                                        
+                                    <div className="page6-layout">  
 
 
                                         <button
@@ -712,21 +707,21 @@ const Book = () => {
                                         </button> */}
 
                                         <button
+                                            className="sound-button-third3"
+                                            onClick={() =>
+                                                openPopupWithContent("secAQ5")
+                                            }
+                                        >
+                                            <FontAwesomeIcon icon={faArrowPointer} />
+                                        </button>
+
+                                        <button
                                             className="sound-button-third1"
                                             onClick={() =>
                                                 openPopupWithContent("secAQ51")
                                             }
                                         >
                                             {/* <FontAwesomeIcon icon={faHeadphones} /> */}
-                                        </button>
-
-                                        <button
-                                            className="sound-button-third3"
-                                            onClick={() =>
-                                                openPopupWithContent("")
-                                            }
-                                        >
-                                            <FontAwesomeIcon icon={faArrowPointer} />
                                         </button>
 
 
@@ -804,10 +799,13 @@ const Book = () => {
             
 
             <Popup isOpen={isPopupOpen} onClose={closePopup}>
-
+                {popupType === "secAQ1" && (
+                    <div>
+                        <audio src={sound1} controls className="page4audio" />
+                    </div>
+                )}
                 {popupType === "secAQ1quiz" && (
                     <Q1 />
-
                 )}
 
                 {popupType === "secAQ2" && (
@@ -824,11 +822,12 @@ const Book = () => {
                     </div>
                 )}
 
-                {/* {popupType === "secAQ4" && (
-                    <div>
-                        <audio src={sound2} controls className="page4audio" />
-                    </div>
-                )} */}
+{popupType === "secAQ5" && (
+    <Q5 
+        sound={sound3}  
+    />
+)}
+
 
                 {popupType === "secAQ51" && (
                     <div>
@@ -842,7 +841,7 @@ const Book = () => {
                     </div>
                 )}
 
-                {popupType === "secAQ8" && (
+                {/* {popupType === "secAQ8" && (
                     <L2Q1
                         title="Écoute, montre et écris."
                         questionNumber="1"
@@ -852,15 +851,13 @@ const Book = () => {
                         onSuccess={goToNextQuestion1}
                     />
 
-                )}
+                )} */}
 
                 {popupType === "secAQ9" && (
-                    <div>
-                        <audio src={sound7} controls className="page4audio" />
-                    </div>
+                    <Q7 />
                 )}
 
-                {popupType === "secAQ10" && (
+                {/* {popupType === "secAQ10" && (
                     <L2Q2
                         title="Écoute et réponds."
                         questionNumber="2"
@@ -870,7 +867,7 @@ const Book = () => {
                         bubbles={customsBubbles}
                         onClose={closePopup}
                     />
-                )}
+                )} */}
 
                 {popupType === "secAQ11" && (
                     <div>
@@ -880,7 +877,7 @@ const Book = () => {
 
                 
 
-                {popupType === "secAQ112" && (
+                {/* {popupType === "secAQ112" && (
                     <L1Q12
                         title="Écoute, montre et écris"
                         questionNumber="2"
@@ -889,11 +886,11 @@ const Book = () => {
                         correctAnswers={["Madame Dubois", "Madame Dubois", "Madame Dubois", "Madame Dubois", "Les enfants"]}
                         onClose={closePopup}
                     />
-                )}
+                )} */}
 
                 
 
-                {popupType === "L2Q12" && (
+                {/* {popupType === "L2Q12" && (
                     <L2Q12
                         title="Écoute, montre et écris"
                         questionNumber="2"
@@ -903,11 +900,11 @@ const Book = () => {
                         onSuccess={closePopup}
                     />
 
-                )}
+                )} */}
 
                 
 
-                {popupType === "l3q1" && (
+                {/* {popupType === "l3q1" && (
                     <FeelingsQuiz onClose={closePopup} />
                 )}
 
@@ -954,7 +951,7 @@ const Book = () => {
                         checkpoints={[12, 14, 16, 18, 21]}
                         onClose={closePopup}
                     />
-                )}
+                )} */}
 
 
 

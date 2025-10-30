@@ -10,10 +10,10 @@ import img from '../assets/page45/puzz.png';
 const exerciseData = {
   audioSrc: sound2,
   pairs: [
-    { id: 'pair-1', letter: 'A', image: img },
-    { id: 'pair-2', letter: 'B', image: img },
-    { id: 'pair-3', letter: 'C', image: img },
-    { id: 'pair-4', letter: 'D', image: img },
+    { id: 'pair-1', letter: 'A', content:'Bonjour, les enfants!',image: img },
+    { id: 'pair-2', letter: 'B', content:'Au revoir, les enfants!',image: img },
+    { id: 'pair-3', letter: 'C', content:'Salut, Marie. Salut, Denice',image: img },
+    { id: 'pair-4', letter: 'D', content:'Bonjour, madame Rose.',image: img },
   ],
 };
 
@@ -109,8 +109,10 @@ const Q3 = () => {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                       >
-                        {letter}
-                      </div>
+                        <strong>{letter}</strong>
+                        {exerciseData.pairs.find(p => p.letter === letter)?.content}
+
+                      </div> 
                     )}
                   </Draggable>
                 ))}

@@ -16,7 +16,7 @@
 /* محتوى البوب أب */
 .popup-content {
     /* background-image: url('../assets/popup/bg.png'); */
-    background-color: #f1f1f1;
+    background-color: #ddebed;
     background-size: cover;
     background-repeat: no-repeat;
     padding: clamp(1rem, 2vw, 2.5rem);

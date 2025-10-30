@@ -34,6 +34,7 @@
 
 /* زر التأكيد */
 .my-button {
+  position: absolute;
   background: #4a90e2 !important;
   color: white !important;
   font-weight: bold !important;
@@ -44,7 +45,7 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin-top: clamp(120px, 15vw, 210px) !important;
+  margin-top: clamp(120px, 15vw, 100px) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -68,6 +69,7 @@
 
 /* زر الغلط */
 .my-button1 {
+  position: absolute;
   background: #f44336;
   color: white;
   font-weight: bold;
@@ -78,7 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(120px, 15vw, 210px);
+  margin-top: clamp(120px, 15vw, 100px);
   transition: transform 0.3s ease, background 0.3s ease;
   transform-origin: center;
 }

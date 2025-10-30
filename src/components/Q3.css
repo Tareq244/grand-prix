@@ -148,8 +148,8 @@
 }
 
 .check-button2 {
-    background-color: #007bff;
-    left: 20%;
+    background-color: #4CAF50;
+    right: 20%;
 }
 .check-button2:hover {
     background-color: #0056b3;
@@ -157,8 +157,8 @@
 }
 
 .try-again-button {
-    background-color: #6c757d;
-    right: 20%;
+    background-color: #ff9800;
+    left: 20%;
 }
 .try-again-button:hover {
     background-color: #5a6268;

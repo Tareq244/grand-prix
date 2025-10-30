@@ -87,7 +87,8 @@ body {
     transform: rotateY(180deg);
 }
 
-button {
+#next-btn,
+#prev-btn {
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -155,6 +156,7 @@ button:hover svg { color: #333; }
 .sound-button-but,
 .sound-button-butt
  {
+    position: absolute;
     background-color: transparent; 
     border: none;
     color: transparent;
@@ -209,11 +211,11 @@ button:hover svg { color: #333; }
     left: 6.5%;
 }
 .sound-button {
-    top: 9%;
+    top: 7.5%;
     left: 6.5%;
 }
 .sound-buttonnn {
-    top: 9%;
+    top: 7.5%;
     left: 1%;
     color: #fff;
     background-color: #ff5d9e;
@@ -228,17 +230,17 @@ button:hover svg { color: #333; }
 }
 
 .sound-button-third1{
-    top: 62%;
+    top: 60.5%;
     left: 3.5%;
 }
 
 .sound-button-third2{
-    top: 62%;
+    top: 60.5%;
     left: 8%;
 }
 
 .sound-button-third3{
-    top: 62%;
+    top: 60.5%;
     left: -0.3%;
     background-color: #ff5d9e;
     color: #fff;
@@ -249,7 +251,7 @@ button:hover svg { color: #333; }
     left: 50.8%;
 }
 .sound-button-p72{
-    top: 73%;
+    top: 71.5%;
     left: 8%;
 }
 
@@ -263,19 +265,19 @@ button:hover svg { color: #333; }
 }
 
 .sound-button-p8{
-    top: 8.5%;
+    top: 7.5%;
     left: 9%;
 }
 .sound-button-p88{
-    top: 8.5%;
+    top: 7.5%;
     left: 5%;
 }
 .sound-button-p888{
-    top: 34%;
+    top: 33%;
     left: 5%;
 }
 .sound-button-p8888{
-    top: 34%;
+    top: 33%;
     left: 9%;
 }
 .sound-button-p88888{
@@ -300,17 +302,17 @@ button:hover svg { color: #333; }
     left: 10.5%;
 }
 .sound-button-but{
-    top: 18%;
+    top: 16.5%;
     left: 8%;
 }
 .sound-button-butt{
-    top: 18%;
+    top: 16.5%;
     left: 3%;
     background-color: #ff5d9e;
     color: #fff;
 }
 .sound-button-p11{
-    top: 61.5%;
+    top: 60%;
     left: 8%;
 }
 
@@ -435,7 +437,31 @@ button:hover svg { color: #333; }
     bottom: 82%;
     left: 55%;
 }
+.page4audio::-webkit-media-controls-panel {
+  background-color: #cfe8fc; /* لون الخلفية */
+}
 
+/* لتغيير لون زر التشغيل */
+.page4audio::-webkit-media-controls-play-button {
+  background-color: #67cadb; /* أزرق */
+  border-radius: 50%;
+}
+
+/* لتغيير لون الوقت الحالي */
+.page4audio::-webkit-media-controls-current-time-display {
+  color: #0d47a1; /* لون النص */
+}
+
+/* لتغيير لون الشريط */
+/* .page4audio::-webkit-media-controls-timeline {
+  background-color: #90caf9;
+  border-radius: 10px;
+} */
+
+/* لتغيير لون شريط الصوت */
+.page4audio::-webkit-media-controls-volume-slider {
+  background-color: #bbdefb;
+}
 .page4button{
     position: absolute;
     top: 9%;
@@ -611,7 +637,8 @@ button:hover svg { color: #333; }
     font-weight: 100;
     color: black;
     background: transparent;
-    width: 50%;
+    width: 100%;
+    text-align: left;
 }
 
 .title-image-container {

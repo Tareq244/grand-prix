@@ -83,11 +83,11 @@ const handleTryAgain = () => {
       
 
       <button className="q5-submit-btn" onClick={checkAnswers}>
-        check answer
+        Vérifier ✓
       </button>
 
       <button className="q5-try-btn" onClick={handleTryAgain}>
-        Try again
+        Réessayer ↻
       </button>
 
     </div>

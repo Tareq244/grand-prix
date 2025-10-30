@@ -34,6 +34,8 @@ import Q2 from './Q2';
 import Q3 from './Q3';
 import Q5 from './Q5';
 import Q7 from './Q7';
+import Q11 from './Q11';
+import Q12 from './Q12';
 // import FindItemsQuiz from './FindItemsQuiz';
 // import L3Q2 from './L3Q2';
 // import L4Q1 from './L4Q1';
@@ -685,7 +687,7 @@ const Book = () => {
                                             className="sound-button"
                                             onClick={() => openPopupWithContent("secAQ3")}
                                         >
-
+                                            {/* <FontAwesomeIcon icon={faArrowPointer} /> */}
                                         </button>
 
                                          <button
@@ -745,6 +747,7 @@ const Book = () => {
                                 {/* page 8 */}
                                 {index === 3 && (
                                     <div className="page8-layout">
+
                                         <button
                                             className="sound-button-p8"
                                             onClick={() =>
@@ -870,9 +873,11 @@ const Book = () => {
                 )} */}
 
                 {popupType === "secAQ11" && (
-                    <div>
-                        <audio src={sound8} controls className="page4audio" />
-                    </div>
+                    <Q11 />
+                )}
+
+                {popupType === "secAQ122" && (
+                    <Q12 />
                 )}
 
                 

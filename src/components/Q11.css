@@ -1,0 +1,168 @@
+/* General Container and Card Styles for Q11 */
+.q11-container {
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.q11-card {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  position: relative; /* For button positioning */
+}
+
+/* Header for Q11 */
+.q11-header {
+  margin-bottom: 24px;
+}
+
+.q11-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4338ca;
+  margin-bottom: 8px;
+}
+
+.q11-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Word Bank for Q11 */
+.q11-word-bank {
+  background-color: #eef2ff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.q11-word-bank-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #312e81;
+  margin-bottom: 8px;
+}
+
+.q11-word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.q11-word {
+  background-color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+
+/* Exercise Section for Q11 */
+.q11-exercise-section {
+  margin-bottom: 32px;
+}
+
+.q11-questions-container {
+  background-color: #f9fafb;
+  padding: 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.q11-question-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.q11-text {
+  color: #374151;
+  font-size: 16px;
+}
+
+/* Input Fields for Q11 */
+.q11-input {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.q11-input-default {
+  border: 2px solid #93c5fd;
+}
+
+.q11-input-default:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.q11-input-correct {
+  border: 2px solid #10b981;
+  background-color: #d1fae5;
+}
+
+.q11-input-incorrect {
+  border: 2px solid #ef4444;
+  background-color: #fee2e2;
+}
+
+/* Buttons for Q11 */
+.q11-button-container {
+  display: flex;
+  justify-content: center; 
+  gap: 200px;
+  position: static;
+}
+
+.q11-button {
+  background-color: #4CAF50; 
+  color: white;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(67, 56, 202, 0.3);
+}
+
+.q11-button:hover {
+  background-color: #2f7531; 
+  transform: translateY(-2px);
+}
+
+.q11-button:active {
+  transform: scale(0.97);
+}
+
+.q11-reset-button {
+  background-color: #ff9800; /* رمادي أنيق */
+  box-shadow: 0 4px 10px rgba(107, 114, 128, 0.3);
+}
+
+.q11-reset-button:hover {
+  background-color: #ba7309;
+}
+
+
+
+.q11-result-box-success {
+  background-color: #d1fae5;
+  border-color: #10b981;
+}
+
+.q11-result-box-warning {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+}
+

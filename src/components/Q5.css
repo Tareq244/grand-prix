@@ -67,37 +67,37 @@
     background: rgb(0, 0, 0,0.1);
 }
 
-.q5-submit-btn {
+.q5-character-group:hover .q5-character-img {
+    transform: scale(1.05); 
+}
+
+
+.q5-submit-btn, .q5-try-btn {
     position: absolute;
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  top: 85%;
-  left: 65%;
+    top: 83%;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.q5-submit-btn {
+    background-color: #4CAF50;
+    right: 20%;
 }
 .q5-submit-btn:hover {
-  background-color: #218838;
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .q5-try-btn {
-  background-color: #888080;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  align-self: center;
-  top: 85%;
-  right: 65%;
+    background-color: #ff9800;
+    left: 20%;
 }
 .q5-try-btn:hover {
-  background-color: #686262;
-}
-.q5-character-group:hover .q5-character-img {
-    transform: scale(1.05); 
+    background-color: #5a6268;
+    transform: translateY(-2px);
 }

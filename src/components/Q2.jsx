@@ -89,14 +89,14 @@ const Q2 = () => {
                             onClick={checkAnswers}
                             disabled={!allAnswered || showFeedback}
                         >
-                            Check ✓
+                            Vérifier ✓
                         </button>
 
                         <button
                             className="btn btn-reset1"
                             onClick={resetExercise}
                         >
-                            Rest ↻
+                            Essayer ↻
                         </button>
                     </div>
 

@@ -186,14 +186,14 @@ const Q1 = () => {
               onClick={checkOrder}
               disabled={orderedImages.length !== 4}
             >
-              check ✓
+              vérifier ✓
             </button>
 
             <button
               className="btn btn-reset"
               onClick={resetExercise}
             >
-              Rest ↻
+              Essayer ↻
             </button>
           </div>
 

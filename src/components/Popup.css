@@ -1,4 +1,4 @@
-/* تراكب البوب أب */
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -16,7 +16,7 @@
 /* محتوى البوب أب */
 .popup-content {
     /* background-image: url('../assets/popup/bg.png'); */
-    background-color: #ddebed;
+    background: linear-gradient(135deg, #8e9ad2 0%, #ddebed 100%);
     background-size: cover;
     background-repeat: no-repeat;
     padding: clamp(1rem, 2vw, 2.5rem);

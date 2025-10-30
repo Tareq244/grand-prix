@@ -1163,7 +1163,10 @@ button:hover svg { color: #333; }
 }
 
 
-.sec4audio{width: 450px !important;}
+.sec4audio{
+    width: 400px !important;
+    margin-bottom: 30px;
+}
 
 .sec4audio::-webkit-media-controls-panel {
   background-color: #cfe8fc; 

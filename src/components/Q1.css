@@ -2,7 +2,6 @@
   background: linear-gradient(135deg, #8e9ad2 0%, #ddebed 100%);
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* direction: rtl; */
   width: 700px;
   height: 100%;
   border-radius: 30px;
@@ -43,14 +42,6 @@
   margin-bottom: 30px;
   text-align: center;
 }
-/* 
-.audio-controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-} */
 
  .btn {
   position: absolute;

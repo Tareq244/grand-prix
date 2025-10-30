@@ -92,12 +92,14 @@
 /* Input Fields for Q11 */
 .q11-input {
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 18px;
   font-size: 16px;
   transition: all 0.3s;
   width: 10px; 
 }
-
+.q11-input:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .q11-input-default {
   border: 2px solid #93c5fd;
 }
@@ -117,7 +119,6 @@
   background-color: #fee2e2;
 }
 
-/* Buttons for Q11 */
 .q11-button-container {
   display: flex;
   justify-content: center; 
@@ -174,3 +175,5 @@
     left: 8%;
     z-index: 100;
 }
+
+

@@ -1,7 +1,7 @@
 /* General Container and Card Styles for Q11 */
 .q11-container {
-  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
-  padding: 24px;
+  background: transparent;
+  padding: 5px;
   font-family: Arial, sans-serif;
 }
 
@@ -10,7 +10,7 @@
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  padding: 32px;
+  padding: 55px;
   position: relative; /* For button positioning */
 }
 
@@ -37,6 +37,7 @@
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 24px;
+  justify-items: center;
 }
 
 .q11-word-bank-title {
@@ -94,6 +95,7 @@
   border-radius: 4px;
   font-size: 16px;
   transition: all 0.3s;
+  width: 10px; 
 }
 
 .q11-input-default {
@@ -166,3 +168,9 @@
   border-color: #f59e0b;
 }
 
+.q11qustion{
+    position: absolute;
+    top: 7.5%;
+    left: 8%;
+    z-index: 100;
+}

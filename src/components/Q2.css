@@ -1,19 +1,19 @@
 .greeting-exercise {
   width: 700px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  direction: rtl;
+  direction: ltr; /* اجعل النص من اليسار لليمين */
+  text-align: left;
+  padding: -80px;
 }
 
 .exercise-container1 {
   margin: 0 auto;
   background: white;
   border-radius: 15px;
-  padding: 30px;
-  height: 600px;
+  padding: 35px;
+  height: 650px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .situations-list {
   display: flex;
@@ -31,7 +31,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   position: relative;
-  direction: ltr;
+  direction: ltr; /* لكل بطاقة */
 }
 
 .situation-card:hover {
@@ -44,10 +44,10 @@
   font-weight: 600;
   color: #444;
   flex: 1;
-  text-align: left;
+  text-align: left; /* اجعل النص في البطاقة يبدأ من اليسار */
 }
 
-
+/* أزرار الاختيار */
 .greeting-options select {
   padding: 8px 12px;
   border-radius: 20px;
@@ -58,11 +58,10 @@
 }
 
 .greeting-options select:hover:not(:disabled) {
-  border-color: #667eea;           /* لون الحدود عند hover */
-  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);  /* ظل خفيف */
-  background-color: #f0f4ff;       /* خلفية خفيفة عند hover */
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+  background-color: #f0f4ff;
 }
-
 
 .greeting-options select:disabled {
   background-color: #f0f0f0;
@@ -79,7 +78,7 @@
   background-color: #fdecea;
 }
 
-
+/* أزرار التحكم */
 .control-buttons1 {
   position: relative;
   display: flex;
@@ -90,10 +89,6 @@
   bottom: -3%;
 }
 
-/* .btn{
-    position: relative;
-} */
-
 .btn-check1 {
   position: absolute;
   left: 60%;
@@ -102,6 +97,11 @@
   color: white;
   padding: 12px 25px;
   font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s;
 }
 
 .btn-check1:hover:not(:disabled) {
@@ -122,6 +122,11 @@
   color: white;
   padding: 12px 25px;
   font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s;
 }
 
 .btn-reset1:hover {
@@ -130,9 +135,9 @@
   box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
 }
 
-
+/* استجابة الشاشات الصغيرة */
 @media (max-width: 768px) {
-  .exercise-container {
+  .exercise-container1 {
     padding: 20px;
   }
 
@@ -144,21 +149,12 @@
 
   .situation-text {
     width: 100%;
-    text-align: right;
+    text-align: left;
   }
-
-  
 
   .option-btn {
     flex: 1;
     min-width: unset;
-  }
-
-  .feedback-icon {
-    right: 10px; 
-    left: auto;
-    top: 10px;
-    transform: translateY(0);
   }
 }
 
@@ -176,7 +172,8 @@
     font-size: 0.9rem;
   }
 }
-.qustion1
-{
+
+.qustion1 {
   font-size: x-large;
+  text-align: left; /* يبدأ من البداية */
 }

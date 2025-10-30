@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './Q11.css'; 
 import ValidationAlert from './ValidationAlert'; 
 
@@ -11,6 +11,14 @@ export default function Q11() {
     blank5: ''
   });
 
+  const inputRefs = {
+    blank1: useRef(null),
+    blank2: useRef(null),
+    blank3: useRef(null),
+    blank4: useRef(null),
+    blank5: useRef(null),
+  };
+
   const correctAnswers = {
     blank1: 'monsieur Antoine',
     blank2: 'm\'appelle',
@@ -22,11 +30,27 @@ export default function Q11() {
   const [showResults, setShowResults] = useState(false);
 
   const handleInputChange = (blank, value) => {
-    setAnswers({
-      ...answers,
+    setAnswers(prev => ({
+      ...prev,
       [blank]: value
-    });
+    }));
+
+    // تمديد عرض الـ input مع الكتابة
+    const input = inputRefs[blank].current;
+    if (input) {
+      const tempSpan = document.createElement('span');
+      tempSpan.style.visibility = 'hidden';
+      tempSpan.style.position = 'absolute';
+      tempSpan.style.whiteSpace = 'pre';
+      tempSpan.style.font = getComputedStyle(input).font;
+      tempSpan.textContent = value || input.placeholder;
+      document.body.appendChild(tempSpan);
+      input.style.width = tempSpan.offsetWidth + 20 + 'px';
+      document.body.removeChild(tempSpan);
+    }
   };
+
+  
 
   const checkAnswers = () => {
     // نحسب النتيجة أولاً
@@ -80,10 +104,13 @@ export default function Q11() {
   ).length;
 
   return (
+    <>
+    <div className="qustion1 q11qustion">
+        <h5><span className="qusetionnum">11.</span>Lis et écris l’information manquante</h5>
+      </div>
     <div className="q11-container">
       <div className="q11-card">
         <div className="q11-header">
-          <h1 className="q11-title">11 Lis et écris l’information manquante</h1>
           <p className="q11-subtitle">Complétez les espaces vides avec les mots appropriés de la liste.</p>
         </div>
 
@@ -103,12 +130,13 @@ export default function Q11() {
             <div className="q11-question-line">
               <span className="q11-text">- Bonjour à tous, je m'appelle</span>
               <input
+                ref={inputRefs.blank1}
                 type="text"
                 value={answers.blank1}
                 onChange={(e) => handleInputChange('blank1', e.target.value)}
                 className={`q11-input ${getInputClass('blank1')}`}
                 style={{ minWidth: '200px' }}
-                placeholder="..."
+                placeholder="mons..."
                 disabled={showResults}
               />
               <span className="q11-text">.</span>
@@ -117,12 +145,13 @@ export default function Q11() {
             <div className="q11-question-line">
               <span className="q11-text">- Bonjour, je</span>
               <input
+                ref={inputRefs.blank2}
                 type="text"
                 value={answers.blank2}
                 onChange={(e) => handleInputChange('blank2', e.target.value)}
                 className={`q11-input ${getInputClass('blank2')}`}
                 style={{ minWidth: '150px' }}
-                placeholder="..."
+                placeholder="m'app..."
                 disabled={showResults}
               />
               <span className="q11-text">Mark.</span>
@@ -131,12 +160,13 @@ export default function Q11() {
             <div className="q11-question-line">
               <span className="q11-text">- Bonjour, monsieur Antoine,</span>
               <input
+                ref={inputRefs.blank3}
                 type="text"
                 value={answers.blank3}
                 onChange={(e) => handleInputChange('blank3', e.target.value)}
                 className={`q11-input ${getInputClass('blank3')}`}
                 style={{ minWidth: '100px' }}
-                placeholder="..."
+                placeholder="j..."
                 disabled={showResults}
               />
               <span className="q11-text">m'appelle Claire.</span>
@@ -145,12 +175,13 @@ export default function Q11() {
             <div className="q11-question-line">
               <span className="q11-text">- Bonjour, Claire. Et vous,</span>
               <input
+                ref={inputRefs.blank4}
                 type="text"
                 value={answers.blank4}
                 onChange={(e) => handleInputChange('blank4', e.target.value)}
                 className={`q11-input ${getInputClass('blank4')}`}
                 style={{ minWidth: '150px' }}
-                placeholder="..."
+                placeholder="com..."
                 disabled={showResults}
               />
               <span className="q11-text">vous appelez-vous ?</span>
@@ -159,12 +190,13 @@ export default function Q11() {
             <div className="q11-question-line">
               <span className="q11-text">- Je m'appelle</span>
               <input
+                ref={inputRefs.blank5}
                 type="text"
                 value={answers.blank5}
                 onChange={(e) => handleInputChange('blank5', e.target.value)}
                 className={`q11-input ${getInputClass('blank5')}`}
                 style={{ minWidth: '150px' }}
-                placeholder="..."
+                placeholder="mar..."
                 disabled={showResults}
               />
               <span className="q11-text">.</span>
@@ -198,5 +230,6 @@ export default function Q11() {
 
       </div>
     </div>
+    </>
   );
 }

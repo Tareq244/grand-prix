@@ -7,14 +7,16 @@ import sound2 from '../assets/sounds/12.mp3';
 import sound3 from '../assets/sounds/13.mp3';
 import sound4 from '../assets/sounds/14.mp3';
 
-
+import img1 from '../assets/page45/1.svg';
+import img2 from '../assets/page45/2.svg';
+import img3 from '../assets/page45/3.svg';
+import img4 from '../assets/page45/4.svg';
 const Q1 = () => {
-  // حالة الصور - يمكنك استبدال الروابط بصورك الخاصة
   const [images, setImages] = useState([
-    { id: 1, src: '../assets/page45/puzz.png', label: '1', correctOrder: 1 },
-    { id: 2, src: '../assets/page45/puzz.png', label: '2', correctOrder: 2 },
-    { id: 3, src: '../assets/page45/puzz.png', label: '3', correctOrder: 3 },
-    { id: 4, src: '../assets/page45/puzz.png', label: '4', correctOrder: 4 },
+    { id: 1, src: img1, label: '1', correctOrder: 1 },
+    { id: 2, src: img2, label: '2', correctOrder: 2 },
+    { id: 3, src: img3, label: '3', correctOrder: 3 },
+    { id: 4, src: img4, label: '4', correctOrder: 4 },
   ]);
 
   const [orderedImages, setOrderedImages] = useState([]);
@@ -119,7 +121,9 @@ const Q1 = () => {
       <div className="listening-exercise">
 
         <div className="exercise-container">
-          <div className="qustion1 qustionssss">
+
+          <div className="images-section">
+            <div className="qustion1">
             <h5>
               <span className="qusetionnum">1.</span>
               Écoute, répète et place dans l'ordre.
@@ -133,9 +137,6 @@ const Q1 = () => {
             className="page4audio audio1"
             onEnded={handleAudioEnd}
           />
-
-          <div className="images-section">
-            <h3>Select:</h3>
             <div className="available-images">
               {images.map(image => (
                 <div

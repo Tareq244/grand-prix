@@ -45,17 +45,15 @@ const Q2 = () => {
 
     return (
         <>
-            <div className="qustion1">
+
+            <div className="greeting-exercise">
+                <div className="exercise-container1">
+                    <div className="qustion1">
                 <h5>
                     <span className="qusetionnum">2.</span>
                     Je serre la main ou je fais la bise?
                 </h5>
             </div>
-
-            <div className="greeting-exercise">
-                <div className="exercise-container1">
-
-
                     <div className="situations-list">
                         {situations.map(situation => (
                             <div key={situation.id} className="situation-card">

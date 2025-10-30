@@ -1,103 +1,141 @@
+/* --- الحاوية الرئيسية للنشاط --- */
 .q5-activity-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 100px;
-  font-family: sans-serif;
+    background-color: #f8f9fa; /* لون خلفية هادئ */
+    width: 100%;
+    max-width: 700px; /* تحديد عرض أقصى للتحكم بالحجم */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    padding-bottom: 100px; /* مساحة إضافية للأزرار في الأسفل */
+    font-family: 'Helvetica Neue', sans-serif;
+    border-radius: 16px; /* حواف دائرية */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* ظل ناعم */
+    position: relative; /* ضروري لتثبيت العناصر */
 }
 
-.q5-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+/* --- عنوان السؤال --- */
+.q5qustions {
+    font-size: 1.1rem;
+    color: #343a40;
+    margin-bottom: 10px;
+    text-align: center; /* توسيط العنوان */
+    width: 100%;
+}
+.q5qustions .qusetionnum {
+    color: #4a90e2;
+    font-weight: bold;
 }
 
-.q5-header h5 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #333;
+/* --- مشغل الصوت --- */
+.page6audio {
+    width: 100%;
+    max-width: 400px; /* تحديد عرض مناسب */
+    margin: 0 auto 20px auto; /* توسيط أفقي */
+    display: block;
 }
-.page6audio{
-    position: absolute;
-    bottom: 70%;
+
+/* تخصيص شكل مشغل الصوت (للمتصفحات التي تدعم webkit) */
+.page6audio::-webkit-media-controls-panel {
+    background-color: #eaf2ff;
+    border-radius: 8px;
 }
+.page6audio::-webkit-media-controls-play-button {
+    background-color: #4a90e2;
+    border-radius: 50%;
+}
+.page6audio::-webkit-media-controls-current-time-display,
+.page6audio::-webkit-media-controls-time-remaining-display {
+    color: #1c3d7e;
+    font-weight: 500;
+}
+
+/* --- الجسم الرئيسي (الشخصيات وحقول الإدخال) --- */
 .q5-body {
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
-  width: 100%;
+    display: flex;
+    justify-content: center; /* توسيط المجموعات */
+    align-items: flex-end; /* محاذاة العناصر للأسفل */
+    flex-wrap: wrap; /* السماح بالالتفاف على الشاشات الصغيرة */
+    gap: 40px;
+    width: 100%;
+    margin-top: 15px;
 }
 
 .q5-character-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* المسافة بين الصورة والحقل */
+    width: 200px; /* تحديد عرض ثابت للمجموعة */
 }
 
 .q5-character-img {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  margin-bottom: 10px;
+    width: 100%;
+    max-width: 160px; /* تكبير الصورة قليلاً */
+    height: auto;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-.q5-character-group label {
-  font-size: 1rem;
-  margin-bottom: 8px;
-  color: #444;
-  font-weight: 500;
-  
+.q5-character-group:hover .q5-character-img {
+    transform: translateY(-10px); /* تأثير حركة للأعلى عند المرور */
 }
 
 .q5-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 1rem;
-  background: transparent;
-  text-decoration: underline;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #cce0ff; /* لون إطار هادئ */
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1c3d7e;
+    background-color: #f0f6ff;
+    transition: all 0.2s ease-in-out;
+    outline: none; /* إزالة الإطار عند التركيز */
 }
-.q5-input:hover{
-    transform: scale(1.1);
-    background: rgb(0, 0, 0,0.1);
+.q5-input::placeholder {
+    color: #8fa8d1;
+}
+.q5-input:focus {
+    border-color: #4a90e2;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* تأثير توهج عند التركيز */
 }
 
-.q5-character-group:hover .q5-character-img {
-    transform: scale(1.05); 
-}
-
-
+/* --- الأزرار --- */
 .q5-submit-btn, .q5-try-btn {
     position: absolute;
-    top: 83%;
-    padding: 12px 25px;
+    bottom: 20px; /* تثبيت في الأسفل */
+    padding: 14px 20px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     color: white;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 40%; /* تحديد عرض نسبي */
+    max-width: 220px;
 }
 
 .q5-submit-btn {
-    background-color: #4CAF50;
-    right: 20%;
+    background-color: #28a745; /* أخضر */
+    right: 5%; /* تحديد الموضع */
 }
 .q5-submit-btn:hover {
-    background-color: #0056b3;
+    background-color: #218838;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.3);
 }
 
 .q5-try-btn {
-    background-color: #ff9800;
-    left: 20%;
+    background-color: #ffc107; /* أصفر */
+    color: #212529;
+    left: 5%; /* تحديد الموضع */
 }
 .q5-try-btn:hover {
-    background-color: #5a6268;
+    background-color: #e0a800;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 193, 7, 0.3);
 }

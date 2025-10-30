@@ -437,6 +437,7 @@ button:hover svg { color: #333; }
     bottom: 82%;
     left: 55%;
 }
+
 .page4audio::-webkit-media-controls-panel {
   background-color: #cfe8fc; /* لون الخلفية */
 }
@@ -1160,4 +1161,24 @@ button:hover svg { color: #333; }
 .l2q12-inp4:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease;
+}
+
+
+.sec4audio{width: 450px !important;}
+
+.sec4audio::-webkit-media-controls-panel {
+  background-color: #cfe8fc; 
+}
+
+.sec4audio::-webkit-media-controls-play-button {
+  background-color: #67cadb; 
+  border-radius: 50%;
+}
+
+.sec4audio::-webkit-media-controls-current-time-display {
+  color: #0d47a1; 
+}
+
+.sec4audio::-webkit-media-controls-volume-slider {
+  background-color: #bbdefb;
 }

@@ -1,96 +1,117 @@
-/* حاوية الصفحة لمكون Q7 */
+/* --- الحاوية الرئيسية للنشاط --- */
 .q7-page-container {
-  padding: 1.5rem;
-  font-family: sans-serif;
+    padding: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa; /* لون خلفية موحد */
+    border-radius: 16px; /* يجب أن تكون الحاوية الرئيسية دائرية أيضًا */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: auto;
+    position: relative;
 }
 
-/* رأس السؤال لمكون Q7 */
-.q7-question-header {
-  max-width: 600px;
-  margin: 0 auto 1rem auto;
-  font-size: 1.25rem;
-  color: #374151;
+/* --- عنوان السؤال --- */
+.q7qustion { /* تم تغيير الاسم من q9qustion ليتوافق مع المكون */
+    font-size: 1.1rem;
+    color: #343a40;
+    margin-bottom: 20px;
+    text-align: center; /* توسيط العنوان */
+}
+.q7qustion .qusetionnum {
+    color: #4a90e2;
+    font-weight: bold;
 }
 
-.q7-question-num {
-  font-weight: bold;
-  color: #4f46e5;
-  margin-right: 0.5rem;
-}
-
-/* بطاقة المحتوى لمكون Q7 */
+/* --- بطاقة المحتوى الرئيسية --- */
 .q7-card {  
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-  border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem; /* تقليل الحشوة لتناسب الـ popup */
+    border: 1px solid #e5e7eb;
 }
 
-/* قائمة الجمل لمكون Q7 (هنا التعديل) */
+/* --- قائمة الجمل --- */
 .q7-sentences-list {
-  display: flex;
-  flex-direction: column; /* <<< هذا هو السطر الذي تم إضافته */
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* تقليل المسافة بين العناصر */
 }
 
-/* عنصر الجملة لمكون Q7 */
+/* --- عنصر الجملة --- */
 .q7-sentence-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem;
-  border-radius: 10px;
-  transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid transparent; /* إطار شفاف للتحضير للتأثير */
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer; /* جعل العنصر بأكمله قابلاً للنقر */
 }
 
+/* تأثير عند مرور الماوس */
 .q7-sentence-item:hover {
-  background-color: #f9fafb;
+    background-color: #f7faff;
+    border-color: #dbe8ff;
 }
 
-/* زر الاختيار لمكون Q7 */
+/* حالة العنصر عند الاختيار */
+.q7-sentence-item.selected {
+    background-color: #edf5ff;
+    border-color: #a8caff;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.1);
+}
+
+/* --- زر الاختيار (Checkbox) --- */
 .q7-check-button {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  border: 2px solid #d1d5db;
-  background-color: #ffffff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid #b0c4de;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none; /* تعطيل النقر على الزر مباشرة (النقر على العنصر كله) */
 }
 
 /* حالة الزر عند الاختيار */
-.q7-check-button.checked {
-  background-color: #4f46e5;
-  border-color: #4f46e5;
+.q7-sentence-item.selected .q7-check-button {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+    transform: scale(1.1); /* تأثير بسيط عند الاختيار */
 }
 
 .q7-check-icon {
-  width: 16px;
-  height: 16px;
-  color: white;
+    width: 16px;
+    height: 16px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.1s;
 }
 
-/* تنسيق نص الجملة لمكون Q7 */
+.q7-sentence-item.selected .q7-check-icon {
+    opacity: 1; /* إظهار الأيقونة بسلاسة */
+}
+
+/* --- نص الجملة --- */
 .q7-sentence-text {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  color: #1f2937;
-  font-size: 1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: #343a40;
+    font-size: 1rem;
+    user-select: none; /* منع تحديد النص عند النقر */
 }
 
 .q7-sentence-id {
-  font-weight: 600;
-  color: #6b7280;
+    font-weight: 600;
+    color: #4a90e2; /* لون مميز للترقيم */
 }
 
 .q7-sentence-content {
-  flex: 1;
+    flex: 1;
 }

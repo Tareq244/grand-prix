@@ -1,14 +1,17 @@
+// src/components/Q12.jsx
+
 import React, { useState } from 'react';
-import './Q12.css'; // استيراد ملف CSS المحدّث
+import './Q12.css';
 
 export default function Q12() {
   const [response, setResponse] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // منع السلوك الافتراضي للزر داخل نموذج
     if (response.trim()) {
       setSubmitted(true);
-      // إخفاء رسالة النجاح بعد 3 ثوانٍ وإعادة تعيين الحقول
+      
       setTimeout(() => {
         setSubmitted(false);
         setResponse('');
@@ -21,22 +24,21 @@ export default function Q12() {
       <div className="q12-card">
         <div className="q12-header">
           <div className="q12-number">12</div>
-          <h1 className="q12-title">Présente-toi ainsi que tes ami(e)s</h1>
+          <h2 className="q12-title">Présente-toi ainsi que tes ami(e)s</h2>
         </div>
 
-        <div className="q12-form-container">
-          <div className="q12-textarea-container">
-            <textarea
-              value={response}
-              onChange={(e) => setResponse(e.target.value)}
-              placeholder="Écrivez ici votre présentation et celles de vos amis..."
-              className="q12-textarea"
-              rows={10}
-            />
-          </div>
+        {/* استخدام وسم <form> لتحسين الدلالة (semantics) */}
+        <form className="q12-form-container" onSubmit={handleSubmit}>
+          <textarea
+            value={response}
+            onChange={(e) => setResponse(e.target.value)}
+            placeholder="Écrivez ici votre présentation..."
+            className="q12-textarea"
+            rows={8} // تقليل عدد الصفوف الافتراضي
+          />
 
           <button 
-            onClick={handleSubmit} 
+            type="submit" // تحديد نوع الزر
             className="q12-submit-btn"
             disabled={!response.trim()}
           >
@@ -48,7 +50,7 @@ export default function Q12() {
               Votre réponse a bien été soumise ! ✓
             </div>
           )}
-        </div>
+        </form>
       </div>
     </div>
   );

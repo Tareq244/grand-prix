@@ -1,26 +1,62 @@
+/* --- الإعدادات العامة للحاوية --- */
 .exercise-container2 {
     display: flex;
     flex-direction: column;
-    height: 90%;
     width: 100%;
-    font-family: sans-serif;
+    max-width: 800px; /* تحديد عرض أقصى للتحكم في الحجم داخل الـ popup */
+    margin: auto;
+    font-family: 'Helvetica Neue', sans-serif;
     padding: 20px;
     box-sizing: border-box;
+    background-color: #f8f9fa; /* لون خلفية أفتح وأكثر راحة للعين */
+    border-radius: 16px; /* حواف دائرية للتصميم */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* ظل ناعم */
+    position: relative; /* ضروري لتثبيت الأزرار بالأسفل */
+    padding-bottom: 100px; /* مساحة إضافية للأزرار في الأسفل */
 }
 
+.audio2 {
+    width: 40%;
+    margin-bottom: 25px;
+}
+
+.audio2::-webkit-media-controls-panel {
+  background-color: #cfe8fc; 
+}
+
+.audio2::-webkit-media-controls-play-button {
+  background-color: #67cadb; 
+  border-radius: 50%;
+}
+
+.audio2::-webkit-media-controls-current-time-display {
+  color: #0d47a1; 
+}
+
+.audio2::-webkit-media-controls-volume-slider {
+  background-color: #bbdefb;
+}
+
+.q1qustions{
+    position: absolute;
+    top: 8%;
+}
+/* --- تخطيط التمرين الرئيسي --- */
 .exercise-layout-vertical {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; 
+    gap: 30px; 
     width: 100%;
-    margin-top: 20px;
 }
 
+/* --- قسم الصور ومربعات الإسقاط --- */
 .image-section-horizontal {
     display: flex;
     justify-content: center; 
-    gap: 30px; 
+    align-items: flex-start; /* محاذاة العناصر من الأعلى */
+    flex-wrap: wrap; /* السماح بالالتفاف على الشاشات الصغيرة */
+    gap: 25px; 
     width: 100%;
 }
 
@@ -28,145 +64,142 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; 
+    gap: 15px; /* تقليل المسافة بين الصورة والمربع */
+    width: 150px; /* تصغير حجم الحاوية قليلاً */
 }
 
 .image-container img {
-    max-width: 150px; 
+    width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 12px; /* حواف أكثر دائرية */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+.image-container img:hover {
+    transform: scale(1.05); /* تأثير عند مرور الماوس */
 }
 
 .drop-box {
-    width: 60px;
-    height: 60px;
-    border: 2px dashed #ccc;
-    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #a9c2e6;
+    border-radius: 50%; /* دائرة كاملة */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #cad9db;
+    background-color: #eaf2ff;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-.drop-box .placeholder {
-    display: none;
+.drop-box.is-over { /* كلاس يضاف عند السحب فوق المربع */
+    background-color: #d0e1ff;
+    border-color: #4a90e2;
 }
 
 .dropped-letter {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    color: #333;
+    color: #1c3d7e;
 }
 
+/* --- قسم الحروف والجمل --- */
 .letters-section-horizontal {
     display: flex;
     justify-content: center;
+    align-items: stretch; /* لجعل العناصر بنفس الارتفاع */
+    flex-wrap: wrap;
     gap: 20px; 
-    padding: 10px;
-    background-color: #ddebed;
-    border-radius: 10px;
-    min-height: 80px; 
+    margin-top: 20px;
+    width: 100%;
 }
-.letters-section-horizontal {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* عمودين */
-  gap: 1rem; /* مسافة بين البطاقات */
-  justify-items: center; /* توسيط العناصر داخل الخلايا */
-  align-items: start;
-  margin-top: 1.5rem;
-  width: 100%;
-  max-width: 500px; /* لتحديد عرض معقول */
-  margin-left: auto;
-  margin-right: auto;
+
+.letter-sentence-pair {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    min-width: 300px; /* عرض أدنى لضمان التناسق */
 }
 
 .letter-box {
-  background: linear-gradient(135deg, #ffffff, #f0f5ff);
-  border: 2px solid #c5d8ff;
-  border-radius: 15px;
-  padding: 1rem;
-  margin: 0.5rem;
-  min-width: 180px;
-  max-width: 220px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #2a3b6b;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.25s ease;
-  cursor: grab;
-  user-select: none;
-  word-wrap: break-word;
-  white-space: normal;
-  
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0; /* منع الحرف من التقلص */
+    background: linear-gradient(145deg, #e3eeff, #ffffff);
+    border: 1px solid #d1e0ff;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4a90e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    cursor: grab;
+    user-select: none;
 }
 
-/* عند السحب */
 .letter-box.dragging {
-  background: linear-gradient(135deg, #d6e4ff, #f5f9ff);
-  border-color: #6b8cff;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(107, 140, 255, 0.3);
-  cursor: grabbing;
+    cursor: grabbing;
+    transform: scale(1.1);
+    background: #4a90e2;
+    color: white;
+    box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
 }
 
-
-
-.letters-section-horizontal {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
+.sentence-text {
+    font-size: 0.95rem;
+    color: #555;
+    text-align: left;
+    flex-grow: 1; /* السماح للنص بأخذ المساحة المتبقية */
 }
 
-/* النص داخل الحروف */
-.letter-box strong {
-  display: block;
-  font-size: 1.2rem;
-  color: #1a237e;
-  margin-bottom: 0.3rem;
-}
-
-
+/* --- قسم الأزرار --- */
 .action-buttons-container {
+    position: absolute; /* تثبيت الحاوية في الأسفل */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 20px; 
+    width: calc(100% - 40px); /* عرض كامل مع ترك هوامش */
+    justify-content: center;
 }
 
 .check-button2, .try-again-button {
-    position: absolute;
-    top: 90%;
-    padding: 12px 25px;
+    flex-grow: 1; /* جعل الزرين يأخذان نفس العرض */
+    max-width: 250px; /* تحديد عرض أقصى لكل زر */
+    padding: 14px 20px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     color: white;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .check-button2 {
-    background-color: #4CAF50;
-    right: 20%;
+    background-color: #28a745; /* أخضر */
 }
 .check-button2:hover {
-    background-color: #0056b3;
+    background-color: #218838;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.3);
 }
 
 .try-again-button {
-    background-color: #ff9800;
-    left: 20%;
+    background-color: #ffc107; /* أصفر */
+    color: #212529; /* نص أغمق للتباين */
 }
 .try-again-button:hover {
-    background-color: #5a6268;
+    background-color: #e0a800;
     transform: translateY(-2px);
-}
-
-.audio2 {
-    margin-bottom: 55px;
-    width: 80%;
-    max-width: 500px;
+    box-shadow: 0 6px 12px rgba(255, 193, 7, 0.3);
 }

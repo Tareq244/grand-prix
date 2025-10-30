@@ -730,7 +730,7 @@ const Book = () => {
                                         <button
                                             className="sound-button-third2"
                                             onClick={() =>
-                                                openPopupWithContent("")
+                                                openPopupWithContent("secAQ51")
                                             }
                                         >
                                             {/* <FontAwesomeIcon icon={faHeadphones} /> */}
@@ -759,7 +759,7 @@ const Book = () => {
 
                                         <button
                                             className="sound-button-p88"
-                                            onClick={() => openPopupWithContent("secAQ112")}
+                                            onClick={() => openPopupWithContent("secAQ11")}
                                         >
                                             {/* <FontAwesomeIcon icon={faArrowPointer} /> */}
                                         </button>
@@ -768,7 +768,7 @@ const Book = () => {
                                             className="sound-button-p888"
                                             onClick={() => {
                                                 console.log("L3Q2 Clicked!");
-                                                openPopupWithContent("secAQ12")
+                                                openPopupWithContent("secAQ122")
                                             }}
                                         >
                                             {/* <FontAwesomeIcon icon={faArrowPointer} /> */}
@@ -804,7 +804,7 @@ const Book = () => {
             <Popup isOpen={isPopupOpen} onClose={closePopup}>
                 {popupType === "secAQ1" && (
                     <div>
-                        <audio src={sound1} controls className="page4audio" />
+                        <audio src={sound1} controls className="sec4audio" />
                     </div>
                 )}
                 {popupType === "secAQ1quiz" && (
@@ -821,7 +821,7 @@ const Book = () => {
 
                 {popupType === "secAQ3" && (
                     <div>
-                        <audio src={sound2} controls className="page4audio" />
+                        <audio src={sound2} controls className="sec4audio" />
                     </div>
                 )}
 
@@ -834,7 +834,7 @@ const Book = () => {
 
                 {popupType === "secAQ51" && (
                     <div>
-                        <audio src={sound3} controls className="page4audio" />
+                        <audio src={sound3} controls className="sec4audio" />
                     </div>
                 )}
 

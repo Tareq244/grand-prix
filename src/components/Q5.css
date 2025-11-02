@@ -1,18 +1,18 @@
 /* --- الحاوية الرئيسية للنشاط --- */
 .q5-activity-container {
-    background-color: #f8f9fa; /* لون خلفية هادئ */
+    background-color: #f8f9fa;
     width: 100%;
-    max-width: 700px; /* تحديد عرض أقصى للتحكم بالحجم */
+    max-width: 700px;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 25px;
     padding: 20px;
-    padding-bottom: 100px; /* مساحة إضافية للأزرار في الأسفل */
+    padding-bottom: 100px;
     font-family: 'Helvetica Neue', sans-serif;
-    border-radius: 16px; /* حواف دائرية */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* ظل ناعم */
-    position: relative; /* ضروري لتثبيت العناصر */
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
 }
 
 /* --- عنوان السؤال --- */
@@ -20,9 +20,10 @@
     font-size: 1.1rem;
     color: #343a40;
     margin-bottom: 10px;
-    text-align: center; /* توسيط العنوان */
+    text-align: center;
     width: 100%;
 }
+
 .q5qustions .qusetionnum {
     color: #4a90e2;
     font-weight: bold;
@@ -31,8 +32,8 @@
 /* --- مشغل الصوت --- */
 .page6audio {
     width: 100%;
-    max-width: 400px; /* تحديد عرض مناسب */
-    margin: 0 auto 20px auto; /* توسيط أفقي */
+    max-width: 400px;
+    margin: 0 auto 20px auto;
     display: block;
 }
 
@@ -41,10 +42,12 @@
     background-color: #eaf2ff;
     border-radius: 8px;
 }
+
 .page6audio::-webkit-media-controls-play-button {
     background-color: #4a90e2;
     border-radius: 50%;
 }
+
 .page6audio::-webkit-media-controls-current-time-display,
 .page6audio::-webkit-media-controls-time-remaining-display {
     color: #1c3d7e;
@@ -54,9 +57,9 @@
 /* --- الجسم الرئيسي (الشخصيات وحقول الإدخال) --- */
 .q5-body {
     display: flex;
-    justify-content: center; /* توسيط المجموعات */
-    align-items: flex-end; /* محاذاة العناصر للأسفل */
-    flex-wrap: wrap; /* السماح بالالتفاف على الشاشات الصغيرة */
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
     gap: 40px;
     width: 100%;
     margin-top: 15px;
@@ -66,24 +69,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* المسافة بين الصورة والحقل */
-    width: 200px; /* تحديد عرض ثابت للمجموعة */
+    gap: 15px;
+    width: 200px;
 }
 
 .q5-character-img {
     width: 100%;
-    max-width: 160px; /* تكبير الصورة قليلاً */
+    max-width: 160px;
     height: auto;
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 .q5-character-group:hover .q5-character-img {
-    transform: translateY(-10px); /* تأثير حركة للأعلى عند المرور */
+    transform: translateY(-10px);
 }
 
 .q5-input {
     width: 100%;
     padding: 12px;
-    border: 2px solid #cce0ff; /* لون إطار هادئ */
+    border: 2px solid #cce0ff;
     border-radius: 8px;
     text-align: center;
     font-size: 1.1rem;
@@ -91,21 +95,23 @@
     color: #1c3d7e;
     background-color: #f0f6ff;
     transition: all 0.2s ease-in-out;
-    outline: none; /* إزالة الإطار عند التركيز */
+    outline: none;
 }
+
 .q5-input::placeholder {
     color: #8fa8d1;
 }
+
 .q5-input:focus {
     border-color: #4a90e2;
     background-color: #fff;
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* تأثير توهج عند التركيز */
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
 }
 
 /* --- الأزرار --- */
 .q5-submit-btn, .q5-try-btn {
     position: absolute;
-    bottom: 20px; /* تثبيت في الأسفل */
+    bottom: 20px;
     padding: 14px 20px;
     font-size: 16px;
     font-weight: 600;
@@ -115,14 +121,15 @@
     color: white;
     transition: all 0.2s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 40%; /* تحديد عرض نسبي */
+    width: 40%;
     max-width: 220px;
 }
 
 .q5-submit-btn {
-    background-color: #28a745; /* أخضر */
-    right: 5%; /* تحديد الموضع */
+    background-color: #28a745;
+    right: 5%;
 }
+
 .q5-submit-btn:hover {
     background-color: #218838;
     transform: translateY(-2px);
@@ -134,8 +141,159 @@
     color: #212529;
     left: 5%; 
 }
+
 .q5-try-btn:hover {
     background-color: #e0a800;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(255, 193, 7, 0.3);
+}
+
+/* Tablet Screens (481px - 768px) */
+@media (max-width: 768px) {
+    .q5-activity-container {
+        padding: 18px;
+        padding-bottom: 90px;
+        gap: 20px;
+        border-radius: 12px;
+    }
+
+    .q5qustions {
+        font-size: 1rem;
+    }
+
+    .page6audio {
+        max-width: 350px;
+        margin-bottom: 15px;
+    }
+
+    .q5-body {
+        gap: 30px;
+        margin-top: 12px;
+    }
+
+    .q5-character-group {
+        width: 180px;
+        gap: 12px;
+    }
+
+    .q5-character-img {
+        max-width: 140px;
+    }
+
+    .q5-input {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .q5-submit-btn, .q5-try-btn {
+        bottom: 18px;
+        padding: 12px 18px;
+        font-size: 15px;
+        width: 42%;
+        max-width: 180px;
+    }
+
+    .q5-submit-btn {
+        right: 4%;
+    }
+
+    .q5-try-btn {
+        left: 4%;
+    }
+}
+
+/* Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .q5-activity-container {
+        padding: 15px;
+        padding-bottom: 100px;
+        gap: 18px;
+        border-radius: 10px;
+    }
+
+    .q5qustions {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .page6audio {
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .q5-body {
+        gap: 25px;
+        margin-top: 10px;
+    }
+
+    .q5-character-group {
+        width: 100%;
+        max-width: 200px;
+        gap: 10px;
+    }
+
+    .q5-character-img {
+        max-width: 130px;
+    }
+
+    .q5-character-group:hover .q5-character-img {
+        transform: translateY(-5px);
+    }
+
+    .q5-input {
+        padding: 10px;
+        font-size: 0.95rem;
+        border-width: 1.5px;
+    }
+
+    .q5-submit-btn, .q5-try-btn {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 15px;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    /* إضافة container للأزرار في الموبايل */
+    .q5-activity-container::after {
+        content: '';
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Very Small Mobile Screens (max-width: 360px) */
+@media (max-width: 360px) {
+    .q5-activity-container {
+        padding: 12px;
+        padding-bottom: 90px;
+        gap: 15px;
+    }
+
+    .q5qustions {
+        font-size: 0.9rem;
+    }
+
+    .q5-body {
+        gap: 20px;
+    }
+
+    .q5-character-group {
+        max-width: 180px;
+    }
+
+    .q5-character-img {
+        max-width: 120px;
+    }
+
+    .q5-input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .q5-submit-btn, .q5-try-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
 }

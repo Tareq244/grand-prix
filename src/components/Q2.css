@@ -3,7 +3,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   direction: ltr; 
   text-align: left;
-  padding: -80px;
+  padding: 20px;
 }
 
 .exercise-container1 {
@@ -31,7 +31,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   position: relative;
-  direction: ltr; /* لكل بطاقة */
+  direction: ltr;
 }
 
 .situation-card:hover {
@@ -44,7 +44,7 @@
   font-weight: 600;
   color: #444;
   flex: 1;
-  text-align: left; /* اجعل النص في البطاقة يبدأ من اليسار */
+  text-align: left;
 }
 
 /* أزرار الاختيار */
@@ -135,45 +135,157 @@
   box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
 }
 
-/* استجابة الشاشات الصغيرة */
+.qustion1 {
+  font-size: x-large;
+  text-align: left;
+}
+
+/* Tablet Screens (481px - 768px) */
 @media (max-width: 768px) {
+  .greeting-exercise {
+    width: 100%;
+    padding: 15px;
+  }
+
   .exercise-container1 {
-    padding: 20px;
+    padding: 25px;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .qustion1 {
+    font-size: 1.5rem;
+  }
+
+  .situations-list {
+    gap: 15px;
   }
 
   .situation-card {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
+    padding: 15px;
   }
 
   .situation-text {
     width: 100%;
-    text-align: left;
-  }
-
-  .option-btn {
-    flex: 1;
-    min-width: unset;
-  }
-}
-
-@media (max-width: 480px) {
-  .exercise-title {
-    font-size: 1.5rem;
-  }
-
-  .exercise-subtitle {
     font-size: 1rem;
   }
 
-  .option-btn {
-    padding: 8px 10px;
-    font-size: 0.9rem;
+  .greeting-options select {
+    width: 100%;
+    min-width: unset;
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .control-buttons1 {
+    position: static;
+    margin-top: 25px;
+    gap: 12px;
+  }
+
+  .btn-check1,
+  .btn-reset1 {
+    position: static;
+    width: 48%;
+    max-width: none;
+    padding: 12px 20px;
   }
 }
 
-.qustion1 {
-  font-size: x-large;
-  text-align: left; /* يبدأ من البداية */
+/* Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .greeting-exercise {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .exercise-container1 {
+    padding: 20px;
+    border-radius: 12px;
+    height: auto;
+  }
+
+  .qustion1 {
+    font-size: 1.3rem;
+  }
+
+  .situations-list {
+    gap: 12px;
+  }
+
+  .situation-card {
+    padding: 12px 15px;
+    gap: 10px;
+    border-radius: 8px;
+  }
+
+  .situation-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .greeting-options select {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .control-buttons1 {
+    position: static;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .btn-check1,
+  .btn-reset1 {
+    position: static;
+    width: 100%;
+    max-width: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Very Small Mobile Screens (max-width: 360px) */
+@media (max-width: 360px) {
+  .greeting-exercise {
+    padding: 8px;
+  }
+
+  .exercise-container1 {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .qustion1 {
+    font-size: 1.2rem;
+  }
+
+  .situations-list {
+    gap: 10px;
+  }
+
+  .situation-card {
+    padding: 10px 12px;
+  }
+
+  .situation-text {
+    font-size: 0.9rem;
+  }
+
+  .greeting-options select {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .btn-check1,
+  .btn-reset1 {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
 }

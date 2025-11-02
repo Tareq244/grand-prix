@@ -1,6 +1,4 @@
-
 .popup-overlay {
-
     position: fixed;
     top: 0;
     left: 0;
@@ -14,11 +12,7 @@
     animation: fadeIn 0.3s ease-out;
 }
 
-/* محتوى البوب أب */
 .popup-content {
-    /* background-image: url('../assets/popup/bg.png'); */
-    /* background: linear-gradient(135deg, #8e9ad2 0%, #ddebed 100%); */
-    /* --- تدرج الضباب الخفيف --- */
     background-color: #f5f7fa;
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     background-size: cover;
@@ -35,7 +29,6 @@
     animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* زر الإغلاق */
 .popup-close-btn {
     position: absolute;
     top: clamp(8px, 1vw, 15px);
@@ -59,18 +52,15 @@
     background-color: #e0e0e0;
 }
 
-/* تأثير الصوت */
 .popup-content audio {
     margin-top: 80px;
     transition: transform 0.2s, box-shadow 0.2s;
-
 }
 .popup-content audio:hover {
     transform: translateY(-3px);
     box-shadow: 0 clamp(4px, 0.8vw, 6px) clamp(10px, 1.5vw, 15px) rgba(0, 0, 0, 0.2);
 }
 
-/* حقل الإجابة */
 #answer-input {
     transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
@@ -85,7 +75,6 @@
     background-color: transparent;
 }
 
-/* زر الإرسال */
 input[type="submit"] {
     border-radius: clamp(5px, 1vw, 8px);
     cursor: pointer;
@@ -96,7 +85,6 @@ input[type="submit"]:hover {
     box-shadow: 0 clamp(4px, 0.8vw, 6px) clamp(10px, 1.5vw, 15px) rgba(0, 0, 0, 0.2);
 }
 
-/* تأثيرات الحركة */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -105,4 +93,24 @@ input[type="submit"]:hover {
 @keyframes zoomIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+
+@media (max-width: 480px) {
+    .popup-content audio {
+        margin-top: 40px; 
+    }
+
+    
+    .popup-content {
+        width: 90vw; 
+        max-width: 90vw; 
+    }
+
+    .popup-content audio:hover,
+    #answer-input:hover,
+    input[type="submit"]:hover {
+        transform: none; 
+        box-shadow: 0 clamp(5px, 1vw, 10px) clamp(15px, 2vw, 25px) rgba(0, 0, 0, 0.2); 
+    }
 }

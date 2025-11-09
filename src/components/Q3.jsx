@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import ValidationAlert from "./ValidationAlert";
@@ -61,29 +60,28 @@ const Q3 = () => {
   };
 
   const checkAnswers = () => {
-  const allFilled = Object.values(droppedLetters).every(v => v !== null);
-  if (!allFilled) {
-    ValidationAlert.info("Oops!", "Please complete all fields.");
-    return;
-  }
+    const allFilled = Object.values(droppedLetters).every(v => v !== null);
+    if (!allFilled) {
+      ValidationAlert.info("Oops!", "Please complete all fields.");
+      return;
+    }
 
-  let correctCount = 0;
-  exerciseData.pairs.forEach((pair, index) => {
-    const dropZoneId = `drop-${index + 1}`;
-    if (droppedLetters[dropZoneId] === pair.letter) correctCount++;
-  });
+    let correctCount = 0;
+    exerciseData.pairs.forEach((pair, index) => {
+      const dropZoneId = `drop-${index + 1}`;
+      if (droppedLetters[dropZoneId] === pair.letter) correctCount++;
+    });
 
-  const scoreText = `${correctCount}/${exerciseData.pairs.length}`;
+    const scoreText = `${correctCount}/${exerciseData.pairs.length}`;
 
-  const isCorrect = correctCount === exerciseData.pairs.length;
+    const isCorrect = correctCount === exerciseData.pairs.length;
 
-  if (isCorrect) {
-    ValidationAlert.success("Good Job!", "All answers are correct!", scoreText);
-  } else {
-    ValidationAlert.error("Try Again!", "Some answers are incorrect.", scoreText);
-  }
-};
-
+    if (isCorrect) {
+      ValidationAlert.success("Good Job!", "All answers are correct!", scoreText);
+    } else {
+      ValidationAlert.error("Try Again!", "Some answers are incorrect.", scoreText);
+    }
+  };
 
   return (
     <div className="exercise-container2">
@@ -105,7 +103,6 @@ const Q3 = () => {
                     <div 
                       ref={provided.innerRef} 
                       {...provided.droppableProps}
-                     
                       className={`drop-box ${snapshot.isDraggingOver ? 'is-over' : ''}`}
                     >
                       {droppedLetters[`drop-${index + 1}`] ? (
@@ -113,7 +110,7 @@ const Q3 = () => {
                       ) : (
                         <span className="placeholder"></span>
                       )}
-                       {provided.placeholder}
+                      {provided.placeholder}
                     </div>
                   </div>
                 )}
@@ -124,23 +121,29 @@ const Q3 = () => {
           <Droppable droppableId="letters" direction="horizontal" isDropDisabled={true}>
             {(provided) => (
               <div className="letters-section-horizontal" ref={provided.innerRef} {...provided.droppableProps}>
-                {shuffledPairs.map((pair, index) => (
-                  <div key={pair.id} className="letter-sentence-pair">
-                    <Draggable draggableId={pair.letter} index={index}>
-                      {(providedDraggable, snapshot) => (
-                        <div
-                          ref={providedDraggable.innerRef}
-                          {...providedDraggable.draggableProps}
-                          {...providedDraggable.dragHandleProps}
-                          className={`letter-box ${snapshot.isDragging ? 'dragging' : ''}`}
-                        >
-                          {pair.letter}
-                        </div>
-                      )}
-                    </Draggable>
-                    <span className="sentence-text">{pair.content}</span>
-                  </div>
-                ))}
+                {shuffledPairs.map((pair, index) => {
+                  // إخفاء الحرف إذا تم سحبه
+                  const isDropped = Object.values(droppedLetters).includes(pair.letter);
+                  if (isDropped) return null;
+
+                  return (
+                    <div key={pair.id} className="letter-sentence-pair">
+                      <Draggable draggableId={pair.letter} index={index}>
+                        {(providedDraggable, snapshot) => (
+                          <div
+                            ref={providedDraggable.innerRef}
+                            {...providedDraggable.draggableProps}
+                            {...providedDraggable.dragHandleProps}
+                            className={`letter-box ${snapshot.isDragging ? 'dragging' : ''}`}
+                          >
+                            {pair.letter}
+                          </div>
+                        )}
+                      </Draggable>
+                      <span className="sentence-text">{pair.content}</span>
+                    </div>
+                  );
+                })}
                 {provided.placeholder}
               </div>
             )}

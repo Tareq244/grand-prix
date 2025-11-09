@@ -17,7 +17,7 @@
 
 .audio2 {
     width: 40%;
-    margin-bottom: 25px;
+    margin-top: 8% !important;
 }
 
 .audio2::-webkit-media-controls-panel {
@@ -216,10 +216,10 @@
         border-radius: 12px;
     }
 
-    .audio2 {
+    /* .audio2 {
         width: 60%;
-        margin-bottom: 20px;
-    }
+        margin-bottom: 10px;
+    } */
 
     .q1qustions {
         position: static;
@@ -290,10 +290,10 @@
         border-radius: 10px;
     }
 
-    .audio2 {
+    /* .audio2 {
         width: 80%;
         margin-bottom: 15px;
-    }
+    } */
 
     .q1qustions {
         font-size: 1.2rem;
@@ -376,9 +376,9 @@
         padding-bottom: 90px;
     }
 
-    .audio2 {
+    /* .audio2 {
         width: 90%;
-    }
+    } */
 
     .q1qustions {
         font-size: 1.1rem;
@@ -417,3 +417,4 @@
         font-size: 14px;
     }
 }
+

@@ -52,26 +52,26 @@ export default function Q11() {
   
 
   const checkAnswers = () => {
-    const currentScore = Object.keys(answers).filter(blank => 
-      answers[blank].trim().toLowerCase() === correctAnswers[blank].toLowerCase()
-    ).length;
+  const allFieldsFilled = Object.values(answers).every(answer => answer.trim() !== '');
+  if (!allFieldsFilled) {
+    ValidationAlert.info("Oops!", "Please complete all fields.");
+    return;
+  }
 
-    setShowResults(true);
+  const currentScore = Object.keys(answers).filter(blank => 
+    answers[blank].trim().toLowerCase() === correctAnswers[blank].toLowerCase()
+  ).length;
 
-    const allFieldsFilled = Object.values(answers).every(answer => answer.trim() !== '');
-    if (!allFieldsFilled) {
-      ValidationAlert.info("Oops!", "Please complete all fields.");
-      
-      setShowResults(false); 
-      return;
-    }
+  setShowResults(true);
 
-    if (currentScore === 5) {
-      ValidationAlert.success("Bravoo!", "You got all answers right!");
-    } else {
-      ValidationAlert.error("Try Again!", "Some answers are incorrect.");
-    }
-  };
+  const scoreText = `${currentScore}/5`;
+
+  if (currentScore === 5) {
+    ValidationAlert.success("Bravoo!", "You got all answers right!", scoreText);
+  } else {
+    ValidationAlert.error("Try Again!", "Some answers are incorrect.", scoreText);
+  }
+};
 
   const resetExercise = () => {
     setAnswers({

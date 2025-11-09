@@ -88,13 +88,20 @@ const Q1 = () => {
   };
 
   const checkOrder = () => {
-    const isOrderCorrect = orderedImages.every(
-      (img, index) => img.correctOrder === index + 1
-    ) && orderedImages.length === 4;
+  const correctCount = orderedImages.filter((img, index) => img.correctOrder === index + 1).length;
+  const isOrderCorrect = correctCount === 4;
 
-    setIsCorrect(isOrderCorrect);
-    setShowFeedback(true);
-  };
+  setIsCorrect(isOrderCorrect);
+  setShowFeedback(true);
+
+  // عرض التنبيه مع الدرجة
+  if (isOrderCorrect) {
+    ValidationAlert.success("Good Job!", "You got all answers right!", `${correctCount}/4`);
+  } else {
+    ValidationAlert.error("Try Again!", "Some answers are incorrect.", `${correctCount}/4`);
+  }
+};
+
 
   const resetExercise = () => {
     setOrderedImages([]);
@@ -171,13 +178,6 @@ const Q1 = () => {
           </div>
 
           <div className="control-buttons">
-            <button
-              className="btn btn-check"
-              onClick={checkOrder}
-              disabled={orderedImages.length !== 4}
-            >
-              vérifier ✓
-            </button>
 
             <button
               className="btn btn-reset"
@@ -185,13 +185,22 @@ const Q1 = () => {
             >
               Essayer ↻
             </button>
+
+            <button
+              className="btn btn-check"
+              onClick={checkOrder}
+              disabled={orderedImages.length !== 4}
+            >
+              vérifier ✓
+            </button>
+            
           </div>
 
-          {showFeedback && (
+          {/* {showFeedback && (
             isCorrect
               ? ValidationAlert.success("Good Job!", "You got all answers right!")
               : ValidationAlert.error("Try Again!", "Some answers are incorrect.")
-          )}
+          )} */}
 
         </div>
       </div>

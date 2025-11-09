@@ -12,6 +12,23 @@
     animation: fadeIn 0.3s ease-out;
 }
 
+
+
+/* Medium Screens (Tablet/Small Laptop - max 1024px) */
+@media (max-width: 1024px) {
+    .popup-content {
+        max-width: 80vw;
+        padding: clamp(1rem, 3vw, 1.5rem);
+        border-radius: clamp(15px, 2vw, 30px);
+    }
+
+    .popup-close-btn {
+        width: clamp(30px, 4vw, 40px);
+        height: clamp(30px, 4vw, 40px);
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    }
+}
+
 .popup-content {
     background-color: #f5f7fa;
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -114,3 +131,64 @@ input[type="submit"]:hover {
         box-shadow: 0 clamp(5px, 1vw, 10px) clamp(15px, 2vw, 25px) rgba(0, 0, 0, 0.2); 
     }
 }
+
+/* Very Small Screens (Mobile - max 360px) */
+@media (max-width: 360px) {
+    .popup-content {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .popup-close-btn {
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+}
+    .popup-content audio {
+        margin-top: 40px; 
+    }
+
+    
+    .popup-content {
+    background-color: #f5f7fa;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: clamp(1rem, 2vw, 1rem);
+    border-radius: clamp(10px, 1.5vw, 40px);
+    max-width: clamp(300px, 60vw, 900px);
+    position: relative;
+    box-shadow: 0 clamp(5px, 1vw, 10px) clamp(15px, 2vw, 25px) rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Medium Screens (Tablet/Small Laptop - max 1024px) */
+@media (max-width: 1024px) {
+    .popup-content {
+        max-width: 80vw;
+        padding: clamp(1rem, 3vw, 1.5rem);
+        border-radius: clamp(15px, 2vw, 30px);
+    }
+
+    .popup-close-btn {
+        width: clamp(30px, 4vw, 40px);
+        height: clamp(30px, 4vw, 40px);
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    }
+}
+
+
+
+    .popup-content audio:hover,
+    #answer-input:hover,
+    input[type="submit"]:hover {
+        transform: none; 
+        box-shadow: 0 clamp(5px, 1vw, 10px) clamp(15px, 2vw, 25px) rgba(0, 0, 0, 0.2); 
+    }

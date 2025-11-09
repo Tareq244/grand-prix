@@ -15,24 +15,28 @@ const Q5 = ({ sound }) => {
   };
 
   const checkAnswers = () => {
-   
-    const correctBoyName = 'Antoine';
-    const correctGirlName = 'aime';
+  const correctBoyName = 'Antoine';
+  const correctGirlName = 'aime';
 
-    const isBoyCorrect = boyName.trim().toLowerCase() === correctBoyName.toLowerCase();
-    const isGirlCorrect = girlName.trim().toLowerCase() === correctGirlName.toLowerCase();
+  const isBoyCorrect = boyName.trim().toLowerCase() === correctBoyName.toLowerCase();
+  const isGirlCorrect = girlName.trim().toLowerCase() === correctGirlName.toLowerCase();
 
-    if (!boyName.trim() || !girlName.trim()) {
-      ValidationAlert.info("Attention!", "Veuillez remplir les deux champs.");
-      return;
-    }
+  if (!boyName.trim() || !girlName.trim()) {
+    ValidationAlert.info("Attention!", "Veuillez remplir les deux champs.");
+    return;
+  }
 
-    if (isBoyCorrect && isGirlCorrect) {
-      ValidationAlert.success("Bravo!", "Les réponses sont correctes.");
-    } else {
-      ValidationAlert.error("Essayez encore!", "Une ou plusieurs réponses sont incorrectes.");
-    }
-  };
+  // حساب العلامة
+  const correctCount = (isBoyCorrect ? 1 : 0) + (isGirlCorrect ? 1 : 0);
+  const scoreText = `${correctCount}/2`;
+
+  if (isBoyCorrect && isGirlCorrect) {
+    ValidationAlert.success("Bravo!", "Les réponses sont correctes.", scoreText);
+  } else {
+    ValidationAlert.error("Essayez encore!", "Une ou plusieurs réponses sont incorrectes.", scoreText);
+  }
+};
+
 
   const handleTryAgain = () => {
     setBoyName('');
@@ -58,7 +62,7 @@ const Q5 = ({ sound }) => {
             id="q5-boy-name"
             value={boyName}
             onChange={handleInputChange(setBoyName)}
-            placeholder="Écrivez ici"
+            placeholder="Antoine"
             className="q5-input"
           />
         </div>
@@ -70,7 +74,7 @@ const Q5 = ({ sound }) => {
             id="q5-girl-name"
             value={girlName}
             onChange={handleInputChange(setGirlName)}
-            placeholder="Écrivez ici"
+            placeholder="aime"
             className="q5-input"
           />
         </div>

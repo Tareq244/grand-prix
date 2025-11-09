@@ -26,13 +26,23 @@ const Q2 = () => {
     };
 
     const checkAnswers = () => {
-        const checkedSituations = situations.map(s => ({
-            ...s,
-            isCorrect: s.userGuess === s.correct,
-        }));
-        setSituations(checkedSituations);
-        setShowFeedback(true);
-    };
+  const checkedSituations = situations.map(s => ({
+    ...s,
+    isCorrect: s.userGuess === s.correct,
+  }));
+  setSituations(checkedSituations);
+  setShowFeedback(true);
+
+  const correctCount = checkedSituations.filter(s => s.isCorrect).length;
+  const allCorrect = correctCount === situations.length;
+
+  if(allCorrect){
+    ValidationAlert.success("Good Job!", "You got all answers right!", `${correctCount}/${situations.length}`);
+  } else {
+    ValidationAlert.error("Try Again!", "Some answers are incorrect.", `${correctCount}/${situations.length}`);
+  }
+};
+
 
     const resetExercise = () => {
         setSituations(initialSituations.map(s => ({ ...s, userGuess: null, isCorrect: null })));
@@ -98,11 +108,11 @@ const Q2 = () => {
                         </button>
                     </div>
 
-                    {showFeedback && (
+                    {/* {showFeedback && (
                         allCorrect
                             ? ValidationAlert.success("Good Job!", "You got all answers right!")
                             : ValidationAlert.error("Try Again!", "Some answers are incorrect.")
-                    )}
+                    )} */}
                 </div>
             </div>
         </>

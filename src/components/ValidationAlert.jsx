@@ -6,10 +6,13 @@ import wrong from "../assets/alert/wrong.gif";
 import Notice from "../assets/alert/Notice.gif";
 
 const ValidationAlert = {
-  success: (title = "Good Job!", text = "All answers are correct!") => {
+  success: (title = "Good Job!", text = "All answers are correct!", scoreText = "") => {
     Swal.fire({
         title: "Bravoo",
-        html: "You got all answers right!",
+        html: `
+          <p>${text}</p>
+          ${scoreText ? `<h3 style="color:green; margin-top:10px;">Score: ${scoreText}</h3>` : ""}
+        `,
         imageUrl: good,
         imageWidth: 200,
         imageHeight: 200,
@@ -29,10 +32,13 @@ const ValidationAlert = {
       });
   },
 
-  error: (title = "Try Again!", text = "Some answers are incorrect.") => {
+  error: (title = "Try Again!", text = "Some answers are incorrect.", scoreText = "") => {
     Swal.fire({
         title: "Try Again!",
-        html: "Some answers are incorrect.",
+        html: `
+          <p>${text}</p>
+          ${scoreText ? `<h3 style="color:red; margin-top:10px;">Score: ${scoreText}</h3>` : ""}
+        `,
         imageUrl: wrong,
         imageWidth: 200,
         imageHeight: 200,
@@ -53,10 +59,13 @@ const ValidationAlert = {
       });
   },
 
-  info: (title = "Notice", text = "Please complete all fields.") => {
+  info: (title = "Notice", text = "Please complete all fields.", scoreText = "") => {
     Swal.fire({
         title: "Oops!",
-        html: "Please complete all fields.",
+        html: `
+          <p>${text}</p>
+          ${scoreText ? `<h3 style="color:blue; margin-top:10px;">Score: ${scoreText}</h3>` : ""}
+        `,
         imageUrl: Notice,
         imageWidth: 200,
         imageHeight: 200,

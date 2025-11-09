@@ -61,21 +61,29 @@ const Q3 = () => {
   };
 
   const checkAnswers = () => {
-    const allFilled = Object.values(droppedLetters).every(v => v !== null);
-    if (!allFilled) {
-      ValidationAlert.info("Oops!", "Please complete all fields.");
-      return;
-    }
-    const isCorrect = exerciseData.pairs.every((pair, index) => {
-      const dropZoneId = `drop-${index + 1}`;
-      return droppedLetters[dropZoneId] === pair.letter;
-    });
-    if (isCorrect) {
-      ValidationAlert.success("Good Job!", "All answers are correct!");
-    } else {
-      ValidationAlert.error("Try Again!", "Some answers are incorrect.");
-    }
-  };
+  const allFilled = Object.values(droppedLetters).every(v => v !== null);
+  if (!allFilled) {
+    ValidationAlert.info("Oops!", "Please complete all fields.");
+    return;
+  }
+
+  let correctCount = 0;
+  exerciseData.pairs.forEach((pair, index) => {
+    const dropZoneId = `drop-${index + 1}`;
+    if (droppedLetters[dropZoneId] === pair.letter) correctCount++;
+  });
+
+  const scoreText = `${correctCount}/${exerciseData.pairs.length}`;
+
+  const isCorrect = correctCount === exerciseData.pairs.length;
+
+  if (isCorrect) {
+    ValidationAlert.success("Good Job!", "All answers are correct!", scoreText);
+  } else {
+    ValidationAlert.error("Try Again!", "Some answers are incorrect.", scoreText);
+  }
+};
+
 
   return (
     <div className="exercise-container2">

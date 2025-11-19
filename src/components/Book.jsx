@@ -35,7 +35,7 @@ import img8 from "../assets/8.png";
 
 import img10 from "../assets/page9/blue.png";
 
-
+import headbtn from "../assets/headphone.svg";
 
 const Book = () => {
     const [currentLocation, setCurrentLocation] = useState(0);
